@@ -238,7 +238,13 @@
     }
     .contact-card h3{font-size:30px;margin-bottom:20px}
     .contact-item{margin:18px 0}
-    .contact-item strong{display:block;color:var(--orange);text-transform:uppercase;font-size:12px;letter-spacing:2px}
+    .contact-item strong{
+      display:block;
+      color:var(--orange);
+      text-transform:uppercase;
+      font-size:12px;
+      letter-spacing:2px;
+    }
     .contact-item a{font-size:19px;font-weight:700}
     .map{
       width:100%;
@@ -273,6 +279,23 @@
       text-align:center;
     }
 
+    /* Keeps non-photo sections clean and prevents the same image
+       from being repeated in multiple sections. */
+    .text-cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .text-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 8px 25px rgba(0,0,0,.04);
+    }
+    .text-card h3{font-size:25px;margin-bottom:10px}
+    .text-card p{color:var(--muted)}
+
     @media(max-width:850px){
       .menu-btn{display:block}
       .nav-links{
@@ -293,7 +316,7 @@
       .hero-inner,.intro,.traditional,.contact-grid{grid-template-columns:1fr}
       .hero{padding-top:50px}
       .hero h1{letter-spacing:-2px}
-      .cards{grid-template-columns:1fr}
+      .cards,.text-cards{grid-template-columns:1fr}
       .gallery{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
     }
@@ -327,6 +350,7 @@
       <li><a href="#traditional">Traditional Dish</a></li>
       <li><a href="#drinks">Drinks</a></li>
       <li><a href="#bakery">Bakery</a></li>
+      <li><a href="#experience">Restaurant Experience</a></li>
       <li><a href="#customers">Customers</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -335,7 +359,7 @@
 
 <main>
 
-  <!-- HOME / FRONT VIEW -->
+  <!-- HOME: treasures-front.jpg is used only here -->
   <section class="hero" id="home">
     <div class="hero-inner">
       <div>
@@ -355,7 +379,7 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT: family-outdoor.jpg is used only here -->
   <section id="about">
     <div class="section intro">
       <div>
@@ -378,7 +402,7 @@
     </div>
   </section>
 
-  <!-- FOOD -->
+  <!-- FOOD: these three pictures appear nowhere else -->
   <section class="cream" id="food">
     <div class="section">
       <div class="section-heading">
@@ -415,7 +439,7 @@
     </div>
   </section>
 
-  <!-- TRADITIONAL DISH -->
+  <!-- TRADITIONAL: traditional-meal.jpg is used only here -->
   <section id="traditional">
     <div class="section">
       <div class="section-heading">
@@ -441,7 +465,7 @@
     </div>
   </section>
 
-  <!-- DRINKS -->
+  <!-- DRINKS: no repeated restaurant image -->
   <section class="cream" id="drinks">
     <div class="section">
       <div class="section-heading">
@@ -450,27 +474,26 @@
         <p>Pair your meal with a refreshing drink and enjoy your time at Treasures.</p>
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <img src="restaurant-meal.jpg" alt="Meal served with a drink">
-          <div class="card-body">
-            <h3>Refresh & Relax</h3>
-            <p>Ask our team about the drinks and refreshments available with your meal.</p>
-          </div>
+      <div class="text-cards">
+        <article class="text-card">
+          <h3>Refresh & Relax</h3>
+          <p>Ask our team about the drinks and refreshments available with your meal.</p>
         </article>
 
-        <article class="card">
-          <img src="family-outdoor.jpg" alt="Outdoor seating area">
-          <div class="card-body">
-            <h3>Enjoy the Atmosphere</h3>
-            <p>Take your time, enjoy your meal and relax with family and friends.</p>
-          </div>
+        <article class="text-card">
+          <h3>With Your Meal</h3>
+          <p>Choose a drink to complement your food and make your visit more enjoyable.</p>
+        </article>
+
+        <article class="text-card">
+          <h3>Enjoy Your Time</h3>
+          <p>Take your time, enjoy your meal and relax with family and friends.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- BREAD & BAKERY -->
+  <!-- BAKERY: bakery-staff.jpg and cake.jpg are used only here -->
   <section id="bakery">
     <div class="section">
       <div class="section-heading">
@@ -489,21 +512,11 @@
           <img src="cake.jpg" alt="Cake from Treasures bakery">
           <figcaption>Cakes & Celebrations</figcaption>
         </figure>
-
-        <figure>
-          <img src="food-display.jpg" alt="Fresh food and bakery display">
-          <figcaption>Freshly Prepared</figcaption>
-        </figure>
-
-        <figure>
-          <img src="order-counter.jpg" alt="Treasures order counter">
-          <figcaption>Order & Pay</figcaption>
-        </figure>
       </div>
     </div>
   </section>
 
-  <!-- RESTAURANT EXPERIENCE -->
+  <!-- RESTAURANT EXPERIENCE: order-counter.jpg and outdoor-seating.jpg are used only here -->
   <section class="cream" id="experience">
     <div class="section">
       <div class="section-heading">
@@ -519,24 +532,14 @@
         </figure>
 
         <figure>
-          <img src="food-display.jpg" alt="Food display counter">
-          <figcaption>Food Display</figcaption>
-        </figure>
-
-        <figure>
           <img src="outdoor-seating.jpg" alt="Treasures outdoor seating">
           <figcaption>Outdoor Seating</figcaption>
-        </figure>
-
-        <figure>
-          <img src="family-outdoor.jpg" alt="Family outdoor area at Treasures">
-          <figcaption>Family-Friendly Space</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- CUSTOMERS -->
+  <!-- CUSTOMERS: kept as a clean text section so no picture is duplicated -->
   <section id="customers">
     <div class="section">
       <div class="section-heading">
@@ -545,26 +548,21 @@
         <p>Real moments from people enjoying food and time at Treasures.</p>
       </div>
 
-      <div class="gallery">
-        <figure>
-          <img src="restaurant-meal.jpg" alt="Customer meal at Treasures">
-          <figcaption>Enjoying a Meal</figcaption>
-        </figure>
+      <div class="text-cards">
+        <article class="text-card">
+          <h3>Family Time</h3>
+          <p>A welcoming place to sit down, eat together and spend quality time.</p>
+        </article>
 
-        <figure>
-          <img src="family-outdoor.jpg" alt="People enjoying the outdoor area">
-          <figcaption>Family Time</figcaption>
-        </figure>
+        <article class="text-card">
+          <h3>Good Food</h3>
+          <p>Enjoy familiar meals and freshly prepared selections in a relaxed setting.</p>
+        </article>
 
-        <figure>
-          <img src="order-counter.jpg" alt="Customers at the Treasures counter">
-          <figcaption>At the Counter</figcaption>
-        </figure>
-
-        <figure>
-          <img src="traditional-meal.jpg" alt="Traditional meal at Treasures">
-          <figcaption>Good Food, Great Moments</figcaption>
-        </figure>
+        <article class="text-card">
+          <h3>Great Moments</h3>
+          <p>Whether it is a quick meal or a longer visit, Treasures is made for memorable moments.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -682,4 +680,4 @@
 
 </body>
   </html>
-          
+              
