@@ -5,104 +5,227 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Treasures Restaurant - good food, warm atmosphere and great moments.">
 <title>Treasures Restaurant | Good Food & Great Moments</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:Arial,sans-serif;background:#f7f2eb;color:#171717;line-height:1.6}
-a{text-decoration:none;color:inherit}img{width:100%;height:100%;object-fit:cover;display:block}
+a{text-decoration:none;color:inherit}
+img{width:100%;height:100%;object-fit:cover;display:block}
 .container{width:92%;max-width:1100px;margin:auto}
-header{position:sticky;top:0;z-index:10;background:#171717;color:#fff}
+
+header{position:sticky;top:0;z-index:20;background:#171717;color:#fff}
 .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:30px;font-weight:900}.logo span,.section-title span{color:#f26a21}
-.nav-links{display:flex;gap:25px;font-weight:700}.nav-links a:hover{color:#f26a21}
+.logo{font-size:30px;font-weight:900}
+.logo span,.section-title>span{color:#f26a21}
+.nav-links{display:flex;gap:25px;font-weight:700}
+.nav-links a:hover{color:#f26a21}
 .menu{display:none;background:none;border:0;color:white;font-size:32px}
-.hero{min-height:78vh;display:grid;place-items:center;text-align:center;color:#fff;position:relative;background:#222 url("Screenshot_20260812-095204.jpg") center/cover}
-.hero:before{content:"";position:absolute;inset:0;background:#0008}.hero-content{position:relative;padding:70px 15px}
-.hero h1{font-size:clamp(48px,9vw,90px);line-height:1.05;text-transform:uppercase}
-.hero h1 span{color:#f26a21}.hero p{font-size:22px;max-width:700px;margin:20px auto 28px}
-.btn{display:inline-block;background:#f26a21;color:#fff;padding:13px 25px;border-radius:30px;font-weight:800}
-section{padding:80px 0}.section-title{text-align:center;margin-bottom:40px}
-.section-title h2{font-size:clamp(34px,6vw,55px);line-height:1.1;margin:8px 0}
+
+.hero{
+ min-height:82vh;
+ display:grid;
+ place-items:center;
+ text-align:center;
+ color:#fff;
+ position:relative;
+ background:#222 url("Screenshot_20260812-095044.jpg") center/cover no-repeat;
+}
+.hero:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.52)}
+.hero-content{position:relative;padding:90px 15px;max-width:900px}
+.hero h1{font-size:clamp(48px,9vw,90px);line-height:1.02;text-transform:uppercase}
+.hero h1 span{color:#f26a21}
+.hero p{font-size:22px;max-width:700px;margin:22px auto 30px}
+.btn{display:inline-block;background:#f26a21;color:#fff;padding:14px 28px;border-radius:30px;font-weight:800}
+.btn:hover{background:#d95713;transform:translateY(-2px)}
+
+section{padding:85px 0}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font-size:clamp(34px,6vw,55px);line-height:1.1;margin:8px 0 14px}
 .section-title p{max-width:720px;margin:auto;color:#555;font-size:18px}
+
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-.about-photo{height:500px;border-radius:28px;overflow:hidden}.about-copy h3{font-size:40px;line-height:1.1;margin-bottom:18px}
+.about-photo{height:500px;border-radius:28px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.12)}
+.about-copy h3{font-size:40px;line-height:1.1;margin-bottom:18px}
 .about-copy p{font-size:18px;color:#555;margin-bottom:17px}
-.features,.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:35px}
-.feature,.contact-card{background:#fff;border-radius:20px;padding:27px;box-shadow:0 8px 30px #0000000d}
-.feature b{font-size:21px}.feature p{color:#666;margin-top:7px}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery-item{height:280px;border-radius:20px;overflow:hidden}
+
+.features,.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+.feature,.contact-card{background:#fff;border-radius:20px;padding:27px;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.feature b{font-size:21px}
+.feature p{color:#666;margin-top:7px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-item{height:280px;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.08)}
 .gallery-item.tall{height:430px;grid-row:span 2}
-.contact{background:#171717;color:#fff}.contact .section-title p{color:#ccc}
-.contact-card{background:#242424;color:#fff;text-align:center}.contact-card .icon{font-size:30px}
-.contact-card h3{font-size:23px}.contact-card p{color:#ccc;margin:7px 0 12px}.contact-card a{color:#f26a21;font-weight:800}
-footer{background:#101010;color:#aaa;padding:35px 0}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}
-.footer strong{font-size:24px;color:#fff}.footer strong span{color:#f26a21}.footer-links{display:flex;gap:18px}.copy{text-align:center;border-top:1px solid #333;margin-top:22px;padding-top:18px;font-size:14px}
+.gallery-item:hover img{transform:scale(1.04)}
+.gallery-item img{transition:transform .35s ease}
+
+.contact{background:#171717;color:#fff}
+.contact .section-title p{color:#ccc}
+.contact-card{background:#242424;color:#fff;text-align:center}
+.contact-card .icon{font-size:30px}
+.contact-card h3{font-size:23px}
+.contact-card p{color:#ccc;margin:7px 0 12px}
+.contact-card a{color:#f26a21;font-weight:800}
+
+footer{background:#101010;color:#aaa;padding:35px 0}
+.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer strong{font-size:24px;color:#fff}
+.footer strong span{color:#f26a21}
+.footer-links{display:flex;gap:18px}
+.copy{text-align:center;border-top:1px solid #333;margin-top:22px;padding-top:18px;font-size:14px}
+
 @media(max-width:800px){
-.nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#171717;padding:20px;flex-direction:column;text-align:center}
-.nav-links.open{display:flex}.menu{display:block}.about-grid{grid-template-columns:1fr}.about-photo{height:400px}
-.features,.contact-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}
-.gallery-item,.gallery-item.tall{height:260px;grid-column:auto;grid-row:auto}.gallery-item:first-child{grid-column:span 2;height:330px}
-.footer{flex-direction:column;text-align:center}
+ .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#171717;padding:20px;flex-direction:column;text-align:center}
+ .nav-links.open{display:flex}
+ .menu{display:block}
+ .hero{min-height:86vh}
+ .hero-content{padding:70px 15px}
+ .hero p{font-size:19px}
+ .about-grid{grid-template-columns:1fr}
+ .about-photo{height:400px}
+ .features,.contact-grid{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr 1fr}
+ .gallery-item,.gallery-item.tall{height:260px;grid-column:auto;grid-row:auto}
+ .gallery-item:first-child{grid-column:span 2;height:330px}
+ .footer{flex-direction:column;text-align:center}
 }
 </style>
 </head>
+
 <body>
-<header><div class="container nav">
-<a class="logo" href="#home">TREASURE<span>S</span></a>
-<button class="menu" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-<nav class="nav-links"><a href="#home">Home</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
-</div></header>
+
+<header>
+ <div class="container nav">
+  <a class="logo" href="#home">TREASURE<span>S</span></a>
+  <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <nav class="nav-links">
+   <a href="#home">Home</a>
+   <a href="#about">About</a>
+   <a href="#gallery">Gallery</a>
+   <a href="#contact">Contact</a>
+  </nav>
+ </div>
+</header>
 
 <main>
-<section class="hero" id="home"><div class="hero-content">
-<h1>Good Food.<br><span>Great Moments.</span></h1>
-<p>A welcoming place to enjoy delicious meals, fresh food and a comfortable dining experience.</p>
-<a class="btn" href="#contact">Visit Treasures</a>
-</div></section>
 
-<section id="about"><div class="container">
-<div class="section-title"><span>WELCOME</span><h2>A Place for Good Food & Great Moments</h2>
-<p>Treasures is a welcoming restaurant where customers can enjoy delicious meals, fresh food and a comfortable dining experience.</p></div>
-<div class="about-grid">
-<div class="about-photo"><img src="Screenshot_20260812-095044.jpg" alt="Treasures Restaurant dining"></div>
-<div class="about-copy"><h3>Good Food. Warm Atmosphere. Great Company.</h3>
-<p>Come hungry and leave satisfied. Treasures brings together tasty food, friendly moments and a relaxed place to enjoy time with family and friends.</p>
-<p>Whether you are stopping by for a quick meal or spending time with people you care about, Treasures is made for good moments.</p>
-<a class="btn" href="#gallery">See Our Gallery</a></div>
-</div>
-<div class="features">
-<div class="feature"><b>🍽️ Fresh & Satisfying</b><p>Enjoy delicious meals prepared for a satisfying dining experience.</p></div>
-<div class="feature"><b>❤️ Made for Moments</b><p>A comfortable place to eat, relax and spend time together.</p></div>
-<div class="feature"><b>✨ Welcoming Space</b><p>A friendly atmosphere for customers, families and friends.</p></div>
-</div>
-</div></section>
+<section class="hero" id="home">
+ <div class="hero-content">
+  <h1>Good Food.<br><span>Great Moments.</span></h1>
+  <p>A welcoming place to enjoy delicious meals, fresh food and a comfortable dining experience.</p>
+  <a class="btn" href="#about">Discover Treasures</a>
+ </div>
+</section>
 
-<section id="gallery"><div class="container">
-<div class="section-title"><span>OUR GALLERY</span><h2>Good Food, Great Moments</h2><p>Take a look at the food, people and atmosphere at Treasures Restaurant.</p></div>
-<div class="gallery">
-<div class="gallery-item"><img src="Screenshot_20260812-095044.jpg" alt="Treasures Restaurant customer dining"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095056.jpg" alt="Treasures Restaurant food"></div>
-<div class="gallery-item tall"><img src="Screenshot_20260812-095106.jpg" alt="Treasures Restaurant dining"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095116.jpg" alt="Bread and bakery selection"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095138.jpg" alt="Treasures Restaurant meal"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095155.jpg" alt="Treasures Restaurant interior"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095204.jpg" alt="Fresh restaurant meal"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095306.jpg" alt="Restaurant customers"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095315.jpg" alt="Treasures Restaurant dining"></div>
-<div class="gallery-item"><img src="Screenshot_20260812-095324.jpg" alt="Treasures Restaurant food"></div>
-</div></div></section>
+<section id="about">
+ <div class="container">
+  <div class="section-title">
+   <span>WELCOME TO TREASURES</span>
+   <h2>Good Food. Great Moments.</h2>
+   <p>Treasures is a welcoming restaurant where customers can enjoy delicious meals, fresh food and a comfortable dining experience.</p>
+  </div>
 
-<section class="contact" id="contact"><div class="container">
-<div class="section-title"><span>GET IN TOUCH</span><h2>Visit Treasures</h2><p>Come enjoy good food, a warm atmosphere and great moments at Treasures Restaurant.</p></div>
-<div class="contact-grid">
-<div class="contact-card"><div class="icon">📍</div><h3>Find Us</h3><p>Search for Treasures Restaurant on Google Maps.</p><a href="https://www.google.com/maps/search/?api=1&query=Treasures+Restaurant" target="_blank">Get Directions →</a></div>
-<div class="contact-card"><div class="icon">📞</div><h3>Call Us</h3><p>Find the restaurant's official contact number.</p><a href="https://www.google.com/search?q=Treasures+Restaurant+phone" target="_blank">Find Contact →</a></div>
-<div class="contact-card"><div class="icon">📱</div><h3>Social Media</h3><p>Find Treasures online for updates and special offers.</p><a href="https://www.google.com/search?q=Treasures+Restaurant+social+media" target="_blank">Find Socials →</a></div>
-</div></div></section>
+  <div class="about-grid">
+   <div class="about-photo">
+    <img src="Screenshot_20260812-095155.jpg" alt="Treasures Restaurant interior">
+   </div>
+
+   <div class="about-copy">
+    <h3>Good Food. Warm Atmosphere. Great Company.</h3>
+    <p>Come hungry and leave satisfied. Treasures brings together tasty food, friendly moments and a relaxed place to enjoy time with family and friends.</p>
+    <p>Whether you are stopping by for a quick meal or spending time with people you care about, Treasures is made for good moments.</p>
+    <a class="btn" href="#gallery">Explore Our Gallery</a>
+   </div>
+  </div>
+
+  <div class="features">
+   <div class="feature"><b>🍽️ Fresh & Satisfying</b><p>Enjoy delicious meals prepared for a satisfying dining experience.</p></div>
+   <div class="feature"><b>❤️ Made for Moments</b><p>A comfortable place to eat, relax and spend time together.</p></div>
+   <div class="feature"><b>✨ Welcoming Space</b><p>A friendly atmosphere for customers, families and friends.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="container">
+  <div class="section-title">
+   <span>OUR GALLERY</span>
+   <h2>Food, People & Atmosphere</h2>
+   <p>Take a look at the food, people and atmosphere at Treasures Restaurant.</p>
+  </div>
+
+  <div class="gallery">
+   <div class="gallery-item"><img src="Screenshot_20260812-095056.jpg" alt="Treasures Restaurant food"></div>
+   <div class="gallery-item tall"><img src="Screenshot_20260812-095106.jpg" alt="Treasures Restaurant dining"></div>
+   <div class="gallery-item"><img src="Screenshot_20260812-095116.jpg" alt="Bread and bakery selection"></div>
+   <div class="gallery-item"><img src="Screenshot_20260812-095138.jpg" alt="Treasures Restaurant meal"></div>
+   <div class="gallery-item"><img src="Screenshot_20260812-095204.jpg" alt="Fresh restaurant meal"></div>
+   <div class="gallery-item"><img src="Screenshot_20260812-095306.jpg" alt="Restaurant customers"></div>
+   <div class="gallery-item"><img src="Screenshot_20260812-095315.jpg" alt="Treasures Restaurant dining"></div>
+   <div class="gallery-item"><img src="Screenshot_20260812-095324.jpg" alt="Treasures Restaurant food"></div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container">
+  <div class="section-title">
+   <span>GET IN TOUCH</span>
+   <h2>Visit Treasures</h2>
+   <p>Come enjoy good food, a warm atmosphere and great moments at Treasures Restaurant.</p>
+  </div>
+
+  <div class="contact-grid">
+   <div class="contact-card">
+    <div class="icon">📍</div>
+    <h3>Find Us</h3>
+    <p>Search for Treasures Restaurant on Google Maps.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Treasures+Restaurant" target="_blank">Get Directions →</a>
+   </div>
+
+   <div class="contact-card">
+    <div class="icon">📞</div>
+    <h3>Call Us</h3>
+    <p>Find the restaurant's official contact number.</p>
+    <a href="https://www.google.com/search?q=Treasures+Restaurant+phone" target="_blank">Find Contact →</a>
+   </div>
+
+   <div class="contact-card">
+    <div class="icon">📱</div>
+    <h3>Social Media</h3>
+    <p>Find Treasures online for updates and special offers.</p>
+    <a href="https://www.google.com/search?q=Treasures+Restaurant+social+media" target="_blank">Find Socials →</a>
+   </div>
+  </div>
+ </div>
+</section>
+
 </main>
 
-<footer><div class="container"><div class="footer">
-<div><strong>TREASURE<span>S</span></strong><p>Good food. Warm atmosphere. Great moments.</p></div>
-<div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
-</div><div class="copy">© 2026 Treasures Restaurant. All rights reserved.</div></div></footer>
-<script>document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>document.querySelector(".nav-links").classList.remove("open"));</script>
-</body></html>
+<footer>
+ <div class="container">
+  <div class="footer">
+   <div>
+    <strong>TREASURE<span>S</span></strong>
+    <p>Good food. Warm atmosphere. Great moments.</p>
+   </div>
+   <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+   </div>
+  </div>
+  <div class="copy">© 2026 Treasures Restaurant. All rights reserved.</div>
+ </div>
+</footer>
+
+<script>
+document.querySelectorAll(".nav-links a").forEach(a=>{
+ a.onclick=()=>document.querySelector(".nav-links").classList.remove("open");
+});
+</script>
+
+</body>
+</html>
