@@ -415,6 +415,125 @@ footer{
   }
 }
 
+
+/* PROFESSIONAL CATEGORY SECTIONS */
+.photo-section{
+  margin-top:82px;
+}
+.photo-section:first-of-type{
+  margin-top:50px;
+}
+.photo-section-heading{
+  max-width:760px;
+  margin:0 auto 28px;
+  text-align:center;
+}
+.photo-section-heading h3{
+  margin:9px 0 11px;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.08;
+}
+.photo-section-heading p{
+  max-width:680px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.7;
+}
+.eyebrow{
+  color:#f36a21;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.featured-photo{
+  max-width:1050px;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:28px;
+  background:#eee;
+  box-shadow:0 20px 55px rgba(0,0,0,.12);
+}
+.featured-photo img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+}
+.traditional-photo{
+  max-width:820px;
+}
+.traditional-photo img{
+  aspect-ratio:4/3;
+}
+.photo-grid{
+  display:grid;
+  gap:22px;
+  max-width:1050px;
+  margin:0 auto;
+}
+.photo-grid.two{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.photo-grid figure{
+  margin:0;
+  overflow:hidden;
+  border-radius:24px;
+  background:#eee;
+  box-shadow:0 16px 40px rgba(0,0,0,.09);
+}
+.photo-grid figure img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.photo-grid figure:hover img{
+  transform:scale(1.035);
+}
+.bakery-gallery figure:last-child{
+  grid-column:1 / -1;
+  max-width:520px;
+  width:100%;
+  justify-self:center;
+}
+.drink-card{
+  max-width:720px;
+  margin:0 auto;
+  padding:48px 28px;
+  text-align:center;
+  border-radius:28px;
+  background:linear-gradient(135deg,#fff7f0,#fff);
+  border:1px solid rgba(243,106,33,.18);
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+.drink-icon{
+  font-size:3.2rem;
+  margin-bottom:10px;
+}
+.drink-card h4{
+  margin:0 0 10px;
+  font-size:1.7rem;
+}
+.drink-card p{
+  max-width:520px;
+  margin:0 auto;
+  color:var(--muted);
+  line-height:1.7;
+}
+@media(max-width:760px){
+  .photo-section{margin-top:62px}
+  .photo-grid.two{grid-template-columns:1fr}
+  .featured-photo img{aspect-ratio:4/3}
+  .photo-section-heading h3{font-size:2rem}
+  .bakery-gallery figure:last-child{
+    grid-column:auto;
+    max-width:none;
+  }
+}
+
 </style>
 </head>
 
@@ -526,24 +645,103 @@ footer{
 
 <section class="section gallery-section" id="gallery">
   <div class="container">
+
     <div class="section-head">
-      <span class="eyebrow">Our Gallery</span>
-      <h2>Good food. Great moments.</h2>
-      <p>Take a look at the food, people, bakery, outdoor spaces and restaurant experience at Treasures.</p>
+      <span class="eyebrow">Treasures in Pictures</span>
+      <h2>Good Food. Great Moments.</h2>
+      <p>Explore Treasures by category — the restaurant, food, traditional dishes, bakery, customers and dining spaces.</p>
     </div>
 
-    <div class="gallery-grid">
-      <figure class="gallery-item"><img src="treasures-front.jpg" alt="Treasures Restaurant front view" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="restaurant-meal.jpg" alt="Treasures restaurant meal" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="jollof-chicken.jpg" alt="Jollof rice with chicken" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="traditional-meal.jpg" alt="Traditional meal at Treasures" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="family-outdoor.jpg" alt="Treasures outdoor family area" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="outdoor-seating.jpg" alt="Treasures outdoor seating" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="order-counter.jpg" alt="Treasures restaurant order counter" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="food-display.jpg" alt="Treasures food and bakery display" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="bakery-staff.jpg" alt="Treasures bakery staff" loading="lazy"></figure>
-      <figure class="gallery-item"><img src="cake.jpg" alt="Treasures cake" loading="lazy"></figure>
+    <!-- 01 FRONT VIEW -->
+    <div class="photo-section">
+      <div class="photo-section-heading">
+        <span class="eyebrow">01 · Front View</span>
+        <h3>Welcome to Treasures</h3>
+        <p>Our restaurant is a welcoming place for meals, family and memorable moments.</p>
+      </div>
+      <div class="featured-photo">
+        <img src="treasures-front.jpg" alt="Front view of Treasures Restaurant" loading="lazy">
+      </div>
     </div>
+
+    <!-- 02 FOOD -->
+    <div class="photo-section">
+      <div class="photo-section-heading">
+        <span class="eyebrow">02 · Food</span>
+        <h3>Fresh From Our Kitchen</h3>
+        <p>Enjoy satisfying meals prepared for everyday dining.</p>
+      </div>
+      <div class="photo-grid two">
+        <figure><img src="restaurant-meal.jpg" alt="Meal served at Treasures Restaurant" loading="lazy"></figure>
+        <figure><img src="jollof-chicken.jpg" alt="Jollof rice with chicken at Treasures" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <!-- 03 TRADITIONAL DISH -->
+    <div class="photo-section">
+      <div class="photo-section-heading">
+        <span class="eyebrow">03 · Traditional Dishes</span>
+        <h3>Familiar Nigerian Flavours</h3>
+        <p>Traditional meals and comforting favourites made for a satisfying dining experience.</p>
+      </div>
+      <div class="featured-photo traditional-photo">
+        <img src="traditional-meal.jpg" alt="Traditional meal served at Treasures" loading="lazy">
+      </div>
+    </div>
+
+    <!-- 04 DRINKS -->
+    <div class="photo-section drink-section">
+      <div class="photo-section-heading">
+        <span class="eyebrow">04 · Drinks & Refreshments</span>
+        <h3>Something Refreshing</h3>
+        <p>Pair your meal with a refreshing drink and enjoy your time at Treasures.</p>
+      </div>
+      <div class="drink-card">
+        <div class="drink-icon">🥤</div>
+        <h4>Refresh & Relax</h4>
+        <p>Ask our team about the drinks and refreshments available with your meal.</p>
+      </div>
+    </div>
+
+    <!-- 05 BREAD / BAKERY -->
+    <div class="photo-section">
+      <div class="photo-section-heading">
+        <span class="eyebrow">05 · Bread & Bakery</span>
+        <h3>Freshly Baked Favourites</h3>
+        <p>Discover Treasures bakery selections, from everyday bread to cakes and sweet treats.</p>
+      </div>
+      <div class="photo-grid two bakery-gallery">
+        <figure><img src="food-display.jpg" alt="Fresh food and bakery display at Treasures" loading="lazy"></figure>
+        <figure><img src="bakery-staff.jpg" alt="Treasures bakery staff serving customers" loading="lazy"></figure>
+        <figure><img src="cake.jpg" alt="Cake from Treasures bakery" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <!-- 06 CUSTOMERS -->
+    <div class="photo-section">
+      <div class="photo-section-heading">
+        <span class="eyebrow">06 · Customers</span>
+        <h3>People. Food. Great Moments.</h3>
+        <p>See the people and everyday moments that make Treasures feel welcoming.</p>
+      </div>
+      <div class="photo-grid two">
+        <figure><img src="family-outdoor.jpg" alt="Customers enjoying the Treasures outdoor area" loading="lazy"></figure>
+        <figure><img src="order-counter.jpg" alt="Customers ordering at the Treasures counter" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <!-- 07 DINING SPACE -->
+    <div class="photo-section">
+      <div class="photo-section-heading">
+        <span class="eyebrow">07 · Dining Space</span>
+        <h3>A Place to Enjoy</h3>
+        <p>Relax, sit back and enjoy your meal in a comfortable Treasures setting.</p>
+      </div>
+      <div class="featured-photo">
+        <img src="outdoor-seating.jpg" alt="Treasures outdoor dining area" loading="lazy">
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -658,5 +856,4 @@ function closeMenu(){
 </script>
 
 </body>
-      </html>
-  
+</html>
