@@ -382,6 +382,39 @@ footer{
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column}
 }
+
+/* CLEAN CONTENT CARDS */
+.feature-points{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:32px;
+}
+.feature-points article{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+}
+.feature-points h3{
+  margin:0 0 10px;
+  font-size:1.2rem;
+}
+.feature-points p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+}
+.feature-points.compact{
+  grid-template-columns:repeat(2,1fr);
+}
+@media(max-width:760px){
+  .feature-points,.feature-points.compact{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 
@@ -452,35 +485,12 @@ footer{
     <div class="section-head">
       <span class="eyebrow">From Our Kitchen</span>
       <h2>Food worth coming back for.</h2>
-      <p>Take a look at a few of the meals and dishes served at Treasures.</p>
+      <p>Enjoy freshly prepared meals, Nigerian favourites and satisfying dishes served in a warm, welcoming setting.</p>
     </div>
-
-    <div class="food-grid">
-      <article class="food-card large">
-        <img src="restaurant-meal.jpg" alt="Restaurant meal at Treasures" loading="lazy">
-        <div class="food-info">
-          <h3>Freshly Served</h3>
-          <p>Comforting meals prepared for everyday dining.</p>
-        </div>
-      </article>
-
-      <div class="stack">
-        <article class="food-card small-food">
-          <img src="jollof-chicken.jpg" alt="Jollof rice and chicken" loading="lazy">
-          <div class="food-info">
-            <h3>Jollof & Chicken</h3>
-            <p>A familiar Nigerian favourite.</p>
-          </div>
-        </article>
-
-        <article class="food-card small-food">
-          <img src="traditional-meal.jpg" alt="Traditional Nigerian meal" loading="lazy">
-          <div class="food-info">
-            <h3>Traditional Favourites</h3>
-            <p>Enjoy hearty local-style meals.</p>
-          </div>
-        </article>
-      </div>
+    <div class="feature-points">
+      <article><h3>Fresh Meals</h3><p>Comforting meals prepared for everyday dining.</p></article>
+      <article><h3>Nigerian Favourites</h3><p>Jollof rice, traditional meals and more familiar favourites.</p></article>
+      <article><h3>Bakery Treats</h3><p>Fresh bread, cakes and bakery favourites are also available.</p></article>
     </div>
   </div>
 </section>
@@ -492,62 +502,23 @@ footer{
       <h2>More than a meal.</h2>
       <p>Come for the food, stay for the atmosphere and the moments.</p>
     </div>
-
-    <div class="experience-grid">
-      <article class="experience-card">
-        <div class="experience-img">
-          <img src="family-outdoor.jpg" alt="Outdoor family area at Treasures" loading="lazy">
-        </div>
-        <div class="experience-copy">
-          <h3>Outdoor Moments</h3>
-          <p>A relaxed outdoor space for families, friends and casual visits.</p>
-        </div>
-      </article>
-
-      <article class="experience-card">
-        <div class="experience-img">
-          <img src="outdoor-seating.jpg" alt="Outdoor seating at Treasures" loading="lazy">
-        </div>
-        <div class="experience-copy">
-          <h3>Comfortable Seating</h3>
-          <p>Enjoy your meal in a comfortable and welcoming environment.</p>
-        </div>
-      </article>
-
-      <article class="experience-card">
-        <div class="experience-img">
-          <img src="order-counter.jpg" alt="Treasures restaurant order counter" loading="lazy">
-        </div>
-        <div class="experience-copy">
-          <h3>Order & Enjoy</h3>
-          <p>Choose what you love and make your visit a memorable one.</p>
-        </div>
-      </article>
+    <div class="feature-points">
+      <article><h3>Welcoming Atmosphere</h3><p>A relaxed environment for families, friends and casual visits.</p></article>
+      <article><h3>Comfortable Seating</h3><p>Take your time and enjoy your meal in a comfortable setting.</p></article>
+      <article><h3>Easy Ordering</h3><p>Choose what you love and enjoy a straightforward restaurant experience.</p></article>
     </div>
   </div>
 </section>
 
 <section class="section" id="bakery">
-  <div class="container bakery">
-    <div class="bakery-image">
-      <img src="food-display.jpg" alt="Treasures bakery and food display" loading="lazy">
-    </div>
-
+  <div class="container bakery bakery-text-only">
     <div class="bakery-copy">
       <span class="eyebrow">Treasures Bakery</span>
       <h2>Freshly baked favourites.</h2>
-      <p>
-        Treasures also brings bakery and confectionery favourites together in
-        one convenient place, from everyday bread to sweet treats and cakes.
-      </p>
-
-      <div class="bakery-gallery">
-        <div class="mini">
-          <img src="bakery-staff.jpg" alt="Treasures bakery staff" loading="lazy">
-        </div>
-        <div class="mini">
-          <img src="cake.jpg" alt="Cake from Treasures bakery" loading="lazy">
-        </div>
+      <p>Treasures also brings bakery and confectionery favourites together in one convenient place, from everyday bread to sweet treats and cakes.</p>
+      <div class="feature-points compact">
+        <article><h3>Fresh Bread</h3><p>A selection of everyday bakery favourites.</p></article>
+        <article><h3>Cakes & Treats</h3><p>Sweet options for celebrations and special moments.</p></article>
       </div>
     </div>
   </div>
@@ -558,47 +529,21 @@ footer{
     <div class="section-head">
       <span class="eyebrow">Our Gallery</span>
       <h2>Good food. Great moments.</h2>
-      <p>
-        A collection of food, bakery, restaurant and outdoor moments from Treasures.
-      </p>
+      <p>Take a look at the food, people, bakery, outdoor spaces and restaurant experience at Treasures.</p>
     </div>
 
     <div class="gallery-grid">
-      <figure class="gallery-item">
-        <img src="treasures-front.jpg" alt="Treasures Restaurant front view" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="restaurant-meal.jpg" alt="Treasures restaurant meal" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="jollof-chicken.jpg" alt="Jollof rice with chicken" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="traditional-meal.jpg" alt="Traditional meal at Treasures" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="family-outdoor.jpg" alt="Treasures outdoor family area" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="outdoor-seating.jpg" alt="Treasures outdoor seating" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="order-counter.jpg" alt="Treasures order counter" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="food-display.jpg" alt="Treasures food and bakery display" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="bakery-staff.jpg" alt="Treasures bakery staff" loading="lazy">
-      </figure>
-      <figure class="gallery-item">
-        <img src="cake.jpg" alt="Treasures cake" loading="lazy">
-      </figure>
+      <figure class="gallery-item"><img src="treasures-front.jpg" alt="Treasures Restaurant front view" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="restaurant-meal.jpg" alt="Treasures restaurant meal" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="jollof-chicken.jpg" alt="Jollof rice with chicken" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="traditional-meal.jpg" alt="Traditional meal at Treasures" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="family-outdoor.jpg" alt="Treasures outdoor family area" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="outdoor-seating.jpg" alt="Treasures outdoor seating" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="order-counter.jpg" alt="Treasures restaurant order counter" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="food-display.jpg" alt="Treasures food and bakery display" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="bakery-staff.jpg" alt="Treasures bakery staff" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="cake.jpg" alt="Treasures cake" loading="lazy"></figure>
     </div>
-
-    <p class="gallery-note">
-      Every photo is used intentionally — no giant repeated image wall.
-    </p>
   </div>
 </section>
 
@@ -713,4 +658,5 @@ function closeMenu(){
 </script>
 
 </body>
-</html>
+      </html>
+  
