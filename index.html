@@ -3,88 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Treasures Restaurant — good food, fresh meals, bakery treats and great moments.">
-<title>Treasures Restaurant | Good Food. Great Moments.</title>
+<meta name="description" content="Treasures Restaurant, Lokoja — good food, warm atmosphere and great moments.">
+<title>Treasures Restaurant | Lokoja</title>
 
 <style>
 :root{
   --orange:#f46b21;
   --orange-dark:#d95316;
-  --black:#151515;
-  --cream:#f8f3ed;
+  --cream:#f8f3ec;
+  --dark:#111111;
+  --dark-2:#181818;
+  --text:#262626;
+  --muted:#686868;
   --white:#fff;
-  --text:#242424;
-  --muted:#666;
-  --shadow:0 18px 45px rgba(0,0,0,.10);
+  --line:#e8e0d7;
+  --shadow:0 18px 50px rgba(0,0,0,.10);
   --radius:24px;
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   font-family:Arial,Helvetica,sans-serif;
-  color:var(--text);
   background:var(--cream);
-  line-height:1.6;
+  color:var(--text);
+  line-height:1.65;
 }
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{text-decoration:none;color:inherit}
-
-.container{
-  width:min(1120px,92%);
-  margin:auto;
+.container{width:min(1160px,92%);margin:auto}
+.section{padding:90px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 48px}
+.eyebrow{
+  display:inline-block;
+  color:var(--orange);
+  font-size:.85rem;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
 }
+.section-head h2{
+  font-size:clamp(2.2rem,5vw,4rem);
+  line-height:1.08;
+  margin-bottom:18px;
+  color:var(--dark);
+}
+.section-head p{font-size:1.1rem;color:var(--muted)}
 
-/* NAVIGATION */
 header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(21,21,21,.97);
-  box-shadow:0 4px 20px rgba(0,0,0,.12);
+  background:rgba(17,17,17,.97);
+  backdrop-filter:blur(12px);
 }
-.navbar{
+.nav{
   min-height:78px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:25px;
 }
 .logo{
-  color:white;
+  color:#fff;
   font-size:2rem;
   font-weight:900;
-  letter-spacing:.5px;
+  letter-spacing:-1px;
 }
 .logo span{color:var(--orange)}
 .nav-links{
   display:flex;
   align-items:center;
   gap:28px;
-  color:white;
+  color:#fff;
   font-weight:700;
 }
-.nav-links a{
-  transition:.25s;
-}
+.nav-links a{transition:.25s}
 .nav-links a:hover{color:var(--orange)}
 .menu-btn{
   display:none;
   border:0;
   background:none;
-  color:white;
+  color:#fff;
   font-size:2rem;
   cursor:pointer;
 }
 
-/* HERO */
 .hero{
-  min-height:720px;
+  min-height:calc(100vh - 78px);
   position:relative;
   display:flex;
   align-items:center;
   overflow:hidden;
-  background:#222;
+  background:#111;
 }
 .hero-bg{
   position:absolute;
@@ -97,367 +107,280 @@ header{
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,rgba(0,0,0,.70),rgba(0,0,0,.25),rgba(0,0,0,.42));
+  background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.28),rgba(0,0,0,.45));
 }
 .hero-content{
   position:relative;
   z-index:2;
-  color:white;
+  color:#fff;
+  max-width:780px;
   padding:90px 0;
-  max-width:760px;
 }
-.eyebrow{
-  color:#ff8a43;
-  font-size:.95rem;
+.hero-tag{
+  color:#fff;
   font-weight:800;
   letter-spacing:3px;
   text-transform:uppercase;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 .hero h1{
-  font-size:clamp(3rem,7vw,6rem);
-  line-height:.98;
-  font-weight:900;
+  font-size:clamp(3rem,8vw,6.8rem);
+  line-height:.95;
+  letter-spacing:-4px;
   text-transform:uppercase;
-  margin-bottom:24px;
+  margin-bottom:25px;
 }
 .hero h1 span{color:var(--orange)}
 .hero p{
-  font-size:clamp(1.1rem,2vw,1.35rem);
+  font-size:clamp(1.05rem,2vw,1.35rem);
   max-width:650px;
-  color:#f5f5f5;
-  margin-bottom:32px;
+  color:#eee;
+  margin-bottom:34px;
 }
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:54px;
-  padding:0 27px;
+  min-height:52px;
+  padding:0 25px;
   border-radius:999px;
-  background:var(--orange);
-  color:white;
   font-weight:800;
   transition:.25s;
-  border:2px solid var(--orange);
 }
-.btn:hover{
-  background:var(--orange-dark);
-  transform:translateY(-2px);
-}
-.btn-outline{
-  background:transparent;
-  border-color:white;
-}
-.btn-outline:hover{
-  background:white;
-  color:var(--black);
-}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px)}
+.btn-outline{border:1px solid rgba(255,255,255,.55);color:#fff}
+.btn-outline:hover{background:#fff;color:#111}
 
-/* SECTIONS */
-section{padding:90px 0}
-.section-heading{
-  max-width:720px;
-  margin:0 auto 45px;
-  text-align:center;
-}
-.section-heading .eyebrow{margin-bottom:8px}
-.section-heading h2{
-  font-size:clamp(2.2rem,5vw,3.7rem);
-  line-height:1.05;
-  margin-bottom:17px;
-  font-weight:900;
-}
-.section-heading p{
-  color:var(--muted);
-  font-size:1.08rem;
-}
-
-/* INTRO */
 .intro{
-  background:white;
-}
-.intro-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:55px;
   align-items:center;
 }
 .intro-image{
-  height:560px;
+  height:520px;
   border-radius:var(--radius);
   overflow:hidden;
   box-shadow:var(--shadow);
 }
-.intro-copy .eyebrow{margin-bottom:10px}
 .intro-copy h2{
-  font-size:clamp(2.2rem,5vw,4rem);
+  font-size:clamp(2.3rem,5vw,4.2rem);
   line-height:1.05;
-  margin-bottom:20px;
+  margin:12px 0 22px;
 }
-.intro-copy p{
-  color:var(--muted);
-  margin-bottom:18px;
-  font-size:1.06rem;
-}
-.feature-list{
-  list-style:none;
-  display:grid;
-  gap:12px;
-  margin:25px 0 30px;
-}
-.feature-list li{
-  background:var(--cream);
-  padding:14px 16px;
-  border-radius:14px;
-  font-weight:700;
-}
-.feature-list li::before{
-  content:"✓";
-  color:var(--orange);
-  margin-right:10px;
-  font-weight:900;
-}
+.intro-copy p{color:var(--muted);font-size:1.1rem;margin-bottom:18px}
+.checks{display:grid;gap:13px;margin:25px 0}
+.check{display:flex;gap:12px;align-items:flex-start}
+.check b{color:var(--orange)}
 
-/* FOOD */
-.food-section{background:var(--cream)}
+.food-section{background:#fff}
 .food-grid{
   display:grid;
   grid-template-columns:1.25fr .75fr;
-  gap:25px;
+  gap:22px;
 }
 .food-card{
   position:relative;
-  min-height:360px;
-  border-radius:var(--radius);
+  min-height:330px;
   overflow:hidden;
-  box-shadow:var(--shadow);
+  border-radius:var(--radius);
 }
-.food-card.large{min-height:600px}
-.food-card::after{
+.food-card.large{min-height:680px}
+.food-card img{transition:transform .5s}
+.food-card:hover img{transform:scale(1.05)}
+.food-card:after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(transparent 35%,rgba(0,0,0,.78));
+  background:linear-gradient(transparent 45%,rgba(0,0,0,.75));
 }
-.food-card .caption{
+.food-info{
   position:absolute;
   z-index:2;
   left:25px;
   right:25px;
-  bottom:24px;
-  color:white;
+  bottom:22px;
+  color:#fff;
 }
-.caption h3{
-  font-size:1.8rem;
-  margin-bottom:5px;
-}
-.caption p{color:#eee}
-.food-stack{
-  display:grid;
-  gap:25px;
-}
+.food-info h3{font-size:1.7rem;margin-bottom:4px}
+.food-info p{color:#eee}
 
-/* EXPERIENCE */
+.stack{display:grid;gap:22px}
+.small-food{min-height:329px}
+
 .experience{
-  background:var(--black);
-  color:white;
+  background:var(--dark);
+  color:#fff;
 }
-.experience .section-heading p{color:#bbb}
+.experience .section-head h2{color:#fff}
+.experience .section-head p{color:#aaa}
 .experience-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  gap:20px;
 }
 .experience-card{
-  background:#202020;
-  border:1px solid #333;
+  background:#1c1c1c;
+  border:1px solid #292929;
   border-radius:var(--radius);
   overflow:hidden;
 }
-.experience-image{height:300px}
-.experience-card .card-text{padding:22px}
-.experience-card h3{font-size:1.35rem;margin-bottom:7px}
-.experience-card p{color:#bbb}
+.experience-img{height:310px}
+.experience-card:nth-child(2) .experience-img{height:390px}
+.experience-card:nth-child(3) .experience-img{height:310px}
+.experience-copy{padding:24px}
+.experience-copy h3{font-size:1.45rem;margin-bottom:8px}
+.experience-copy p{color:#aaa}
 
-/* BAKERY */
 .bakery{
-  background:white;
-}
-.bakery-grid{
   display:grid;
   grid-template-columns:.85fr 1.15fr;
-  gap:35px;
+  gap:50px;
   align-items:center;
 }
 .bakery-image{
-  height:530px;
+  height:540px;
   border-radius:var(--radius);
   overflow:hidden;
   box-shadow:var(--shadow);
 }
 .bakery-copy h2{
-  font-size:clamp(2.2rem,5vw,4rem);
+  font-size:clamp(2.4rem,5vw,4.3rem);
   line-height:1.05;
-  margin-bottom:20px;
+  margin:10px 0 20px;
 }
-.bakery-copy p{
-  color:var(--muted);
-  font-size:1.08rem;
-  margin-bottom:20px;
-}
-.bakery-mini{
+.bakery-copy p{color:var(--muted);font-size:1.1rem;margin-bottom:20px}
+.bakery-gallery{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px;
-  margin:25px 0 30px;
 }
-.mini{
-  height:180px;
-  border-radius:18px;
-  overflow:hidden;
-}
+.bakery-gallery .mini{height:220px;border-radius:18px;overflow:hidden}
 
-/* GALLERY */
-.gallery{
-  background:var(--cream);
-}
+.gallery-section{background:#fff}
 .gallery-grid{
-  columns:3 260px;
-  column-gap:20px;
+  columns:3 280px;
+  column-gap:18px;
 }
 .gallery-item{
   break-inside:avoid;
-  margin-bottom:20px;
+  margin:0 0 18px;
   border-radius:20px;
   overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-  background:white;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
-.gallery-item img{
-  height:auto;
-  object-fit:cover;
-  transition:.35s;
-}
-.gallery-item:hover img{transform:scale(1.03)}
+.gallery-item img{height:auto;max-height:560px;object-fit:cover}
+.gallery-note{text-align:center;color:var(--muted);margin-top:35px}
 
-/* CTA */
-.cta{
-  padding:80px 0;
-  background:linear-gradient(135deg,#f46b21,#c94b12);
-  color:white;
-  text-align:center;
-}
-.cta h2{
-  font-size:clamp(2.2rem,5vw,4rem);
-  line-height:1.05;
-  margin-bottom:15px;
-}
-.cta p{
-  max-width:650px;
-  margin:0 auto 28px;
+.visit{
+  background:var(--orange);
   color:#fff;
-  font-size:1.1rem;
 }
-.cta .btn{
-  background:white;
-  color:var(--orange-dark);
-  border-color:white;
+.visit-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:28px;
+  align-items:stretch;
 }
-.cta .btn:hover{
-  background:#fff1e9;
+.visit-copy{
+  background:#171717;
+  border-radius:var(--radius);
+  padding:45px;
 }
+.visit-copy h2{
+  font-size:clamp(2.4rem,5vw,4rem);
+  line-height:1.05;
+  margin:10px 0 22px;
+}
+.visit-copy p{color:#cfcfcf;margin-bottom:25px}
+.contact-list{display:grid;gap:17px;margin:25px 0 30px}
+.contact-row{display:flex;gap:13px;align-items:flex-start}
+.contact-icon{
+  width:38px;height:38px;flex:0 0 38px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:var(--orange);
+}
+.contact-row small{display:block;color:#999;margin-bottom:2px}
+.contact-row a:hover{color:var(--orange)}
+.map-wrap{
+  min-height:520px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:#ddd;
+}
+.map-wrap iframe{width:100%;height:100%;min-height:520px;border:0}
 
-/* FOOTER */
 footer{
-  background:#111;
-  color:white;
-  padding:55px 0 20px;
+  background:#0d0d0d;
+  color:#aaa;
+  padding:60px 0 25px;
 }
 .footer-grid{
   display:grid;
-  grid-template-columns:1.3fr 1fr 1fr;
-  gap:40px;
+  grid-template-columns:1.3fr .8fr .9fr;
+  gap:50px;
   padding-bottom:40px;
 }
-.footer-brand h2{
-  font-size:2rem;
-  margin-bottom:12px;
-}
-.footer-brand h2 span{color:var(--orange)}
-.footer-grid h3{
-  margin-bottom:15px;
-  color:var(--orange);
-}
-.footer-grid p,.footer-grid a{
-  color:#bbb;
-}
-.footer-grid a{
-  display:block;
-  margin-bottom:8px;
-}
-.footer-grid a:hover{color:white}
+.footer-brand .logo{margin-bottom:15px}
+.footer-brand p{max-width:420px}
+.footer-col h3{color:var(--orange);margin-bottom:15px}
+.footer-col{display:grid;align-content:start;gap:10px}
+.footer-col a:hover{color:#fff}
 .footer-bottom{
-  border-top:1px solid #333;
-  padding-top:20px;
-  color:#888;
-  text-align:center;
+  border-top:1px solid #292929;
+  padding-top:22px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
   font-size:.9rem;
 }
 
-/* MOBILE */
-@media(max-width:800px){
-  .navbar{min-height:70px}
-  .logo{font-size:1.65rem}
+@media(max-width:850px){
+  .nav{min-height:70px}
+  .logo{font-size:1.7rem}
   .menu-btn{display:block}
   .nav-links{
+    display:none;
     position:absolute;
     top:70px;
     left:0;
     right:0;
-    background:#151515;
-    display:none;
+    background:#111;
+    padding:20px 5%;
     flex-direction:column;
-    align-items:stretch;
+    align-items:flex-start;
     gap:0;
-    padding:10px 6%;
-    box-shadow:0 15px 25px rgba(0,0,0,.18);
+    border-top:1px solid #292929;
   }
   .nav-links.open{display:flex}
-  .nav-links a{
-    padding:15px 0;
-    border-bottom:1px solid #292929;
-  }
-  .hero{min-height:650px}
-  .hero-content{padding:70px 0}
-  .hero h1{font-size:clamp(2.8rem,14vw,4.7rem)}
-  section{padding:65px 0}
-  .intro-grid,.bakery-grid,.food-grid{
-    grid-template-columns:1fr;
-  }
-  .intro-image{height:420px}
-  .food-card.large{min-height:430px}
-  .experience-grid{grid-template-columns:1fr}
-  .experience-image{height:260px}
-  .bakery-image{height:400px}
-  .footer-grid{grid-template-columns:1fr;gap:25px}
+  .nav-links a{width:100%;padding:14px 0;border-bottom:1px solid #252525}
+  .hero{min-height:calc(100vh - 70px)}
+  .hero h1{letter-spacing:-2px}
+  .intro,.bakery,.visit-grid{grid-template-columns:1fr}
+  .intro-image,.bakery-image{height:430px}
+  .food-grid{grid-template-columns:1fr}
+  .food-card.large{min-height:500px}
+  .experience-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
 }
-
-/* SMALL PHONES */
-@media(max-width:430px){
-  .container{width:90%}
-  .hero{min-height:610px}
+@media(max-width:560px){
+  .section{padding:65px 0}
+  .hero-content{padding:70px 0}
+  .hero h1{font-size:3.35rem}
   .hero p{font-size:1rem}
   .btn{width:100%}
-  .buttons{width:100%}
   .intro-image,.bakery-image{height:360px}
-  .bakery-mini{grid-template-columns:1fr 1fr}
-  .mini{height:140px}
+  .experience-grid{grid-template-columns:1fr}
+  .experience-card:nth-child(2) .experience-img{height:310px}
+  .bakery-gallery{grid-template-columns:1fr}
+  .visit-copy{padding:30px 24px}
+  .map-wrap,.map-wrap iframe{min-height:390px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column}
 }
 </style>
 </head>
@@ -465,350 +388,329 @@ footer{
 <body>
 
 <header>
-  <div class="container navbar">
-    <a href="#home" class="logo">TREASURE<span>S</span></a>
-
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-
+  <div class="container nav">
+    <a class="logo" href="#home">TREASURE<span>S</span></a>
+    <button class="menu-btn" aria-label="Open navigation" onclick="toggleMenu()">☰</button>
     <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#food">Food</a>
-      <a href="#experience">Experience</a>
-      <a href="#bakery">Bakery</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#food" onclick="closeMenu()">Food</a>
+      <a href="#experience" onclick="closeMenu()">Experience</a>
+      <a href="#bakery" onclick="closeMenu()">Bakery</a>
+      <a href="#gallery" onclick="closeMenu()">Gallery</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <img src="treasures-front.jpg" alt="Treasures Restaurant front view">
+    <img src="treasures-front.jpg" alt="Front view of Treasures Restaurant">
   </div>
   <div class="hero-overlay"></div>
-
   <div class="container hero-content">
-    <div class="eyebrow">Welcome to Treasures</div>
+    <div class="hero-tag">Treasures Restaurant · Lokoja</div>
     <h1>Good Food.<br><span>Great Moments.</span></h1>
     <p>
-      A welcoming place to enjoy delicious meals, fresh food,
-      bakery favourites and a comfortable dining experience.
+      A welcoming place to enjoy delicious meals, fresh food, bakery favourites
+      and a comfortable dining experience for family and friends.
     </p>
-
-    <div class="buttons">
-      <a class="btn" href="#food">Explore Our Food</a>
+    <div class="btns">
+      <a class="btn btn-primary" href="#food">Explore Our Food</a>
       <a class="btn btn-outline" href="#contact">Visit Treasures</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="intro" id="about">
-  <div class="container intro-grid">
-
+<section class="section" id="about">
+  <div class="container intro">
     <div class="intro-image">
       <img src="treasures-front.jpg" alt="Treasures Restaurant building">
     </div>
-
     <div class="intro-copy">
-      <div class="eyebrow">About Treasures</div>
-      <h2>Good food, great moments.</h2>
-
+      <span class="eyebrow">Welcome to Treasures</span>
+      <h2>Good food. Warm atmosphere. Great moments.</h2>
       <p>
-        Treasures is a welcoming restaurant where customers can enjoy
-        delicious meals, fresh food and a comfortable dining experience.
+        Treasures brings together a restaurant, bakery and relaxed spaces where
+        customers can enjoy a meal, meet friends and make memorable moments.
       </p>
-
-      <p>
-        From satisfying plates of food to freshly baked favourites,
-        Treasures brings together food, people and a relaxed atmosphere
-        in one place.
-      </p>
-
-      <ul class="feature-list">
-        <li>Fresh and satisfying meals</li>
-        <li>Comfortable dining atmosphere</li>
-        <li>Bakery favourites and fresh bread</li>
-        <li>A welcoming place for family and friends</li>
-      </ul>
-
-      <a class="btn" href="#gallery">See Our Gallery</a>
+      <div class="checks">
+        <div class="check"><b>✓</b><span>Fresh meals and everyday favourites</span></div>
+        <div class="check"><b>✓</b><span>Bakery and confectionery selections</span></div>
+        <div class="check"><b>✓</b><span>Indoor and outdoor seating</span></div>
+        <div class="check"><b>✓</b><span>A welcoming choice for families and friends</span></div>
+      </div>
+      <a class="btn btn-primary" href="#contact">Plan Your Visit</a>
     </div>
-
   </div>
 </section>
 
-<!-- FOOD -->
-<section class="food-section" id="food">
+<section class="section food-section" id="food">
   <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">From Our Kitchen</div>
+    <div class="section-head">
+      <span class="eyebrow">From Our Kitchen</span>
       <h2>Food worth coming back for.</h2>
-      <p>
-        Take a look at some of the meals and food moments captured at Treasures.
-      </p>
+      <p>Take a look at a few of the meals and dishes served at Treasures.</p>
     </div>
 
     <div class="food-grid">
-
       <article class="food-card large">
-        <img src="jollof-chicken.jpg" alt="Jollof rice with chicken">
-        <div class="caption">
-          <h3>Jollof & Chicken</h3>
-          <p>A hearty, satisfying meal served with care.</p>
+        <img src="restaurant-meal.jpg" alt="Restaurant meal at Treasures" loading="lazy">
+        <div class="food-info">
+          <h3>Freshly Served</h3>
+          <p>Comforting meals prepared for everyday dining.</p>
         </div>
       </article>
 
-      <div class="food-stack">
-
-        <article class="food-card">
-          <img src="restaurant-meal.jpg" alt="Restaurant meal at Treasures">
-          <div class="caption">
-            <h3>Fresh Meals</h3>
-            <p>Enjoy a tasty plate in a relaxed setting.</p>
+      <div class="stack">
+        <article class="food-card small-food">
+          <img src="jollof-chicken.jpg" alt="Jollof rice and chicken" loading="lazy">
+          <div class="food-info">
+            <h3>Jollof & Chicken</h3>
+            <p>A familiar Nigerian favourite.</p>
           </div>
         </article>
 
-        <article class="food-card">
-          <img src="traditional-meal.jpg" alt="Traditional Nigerian meal">
-          <div class="caption">
+        <article class="food-card small-food">
+          <img src="traditional-meal.jpg" alt="Traditional Nigerian meal" loading="lazy">
+          <div class="food-info">
             <h3>Traditional Favourites</h3>
-            <p>Comforting flavours made for good moments.</p>
+            <p>Enjoy hearty local-style meals.</p>
           </div>
         </article>
-
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="experience" id="experience">
+<section class="section experience" id="experience">
   <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">The Treasures Experience</div>
+    <div class="section-head">
+      <span class="eyebrow">The Treasures Experience</span>
       <h2>More than a meal.</h2>
-      <p>
-        See the people, spaces and moments that make Treasures feel welcoming.
-      </p>
+      <p>Come for the food, stay for the atmosphere and the moments.</p>
     </div>
 
     <div class="experience-grid">
-
       <article class="experience-card">
-        <div class="experience-image">
-          <img src="order-counter.jpg" alt="Customers ordering at Treasures">
+        <div class="experience-img">
+          <img src="family-outdoor.jpg" alt="Outdoor family area at Treasures" loading="lazy">
         </div>
-        <div class="card-text">
-          <h3>Friendly Service</h3>
-          <p>A lively counter where customers can order and enjoy their meals.</p>
-        </div>
-      </article>
-
-      <article class="experience-card">
-        <div class="experience-image">
-          <img src="family-outdoor.jpg" alt="Outdoor family area at Treasures">
-        </div>
-        <div class="card-text">
+        <div class="experience-copy">
           <h3>Outdoor Moments</h3>
-          <p>A relaxed outdoor space for families, friends and memorable moments.</p>
+          <p>A relaxed outdoor space for families, friends and casual visits.</p>
         </div>
       </article>
 
       <article class="experience-card">
-        <div class="experience-image">
-          <img src="outdoor-seating.jpg" alt="Outdoor seating at Treasures">
+        <div class="experience-img">
+          <img src="outdoor-seating.jpg" alt="Outdoor seating at Treasures" loading="lazy">
         </div>
-        <div class="card-text">
-          <h3>Relax & Enjoy</h3>
-          <p>Comfortable spaces where you can slow down and enjoy your food.</p>
+        <div class="experience-copy">
+          <h3>Comfortable Seating</h3>
+          <p>Enjoy your meal in a comfortable and welcoming environment.</p>
         </div>
       </article>
 
+      <article class="experience-card">
+        <div class="experience-img">
+          <img src="order-counter.jpg" alt="Treasures restaurant order counter" loading="lazy">
+        </div>
+        <div class="experience-copy">
+          <h3>Order & Enjoy</h3>
+          <p>Choose what you love and make your visit a memorable one.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- BAKERY -->
-<section class="bakery" id="bakery">
-  <div class="container bakery-grid">
-
+<section class="section" id="bakery">
+  <div class="container bakery">
     <div class="bakery-image">
-      <img src="bakery-staff.jpg" alt="Treasures bakery staff and bread selection">
+      <img src="food-display.jpg" alt="Treasures bakery and food display" loading="lazy">
     </div>
 
     <div class="bakery-copy">
-      <div class="eyebrow">Treasures Bakery</div>
+      <span class="eyebrow">Treasures Bakery</span>
       <h2>Freshly baked favourites.</h2>
-
       <p>
-        Treasures is also home to a bakery selection with bread and baked
-        treats prepared and displayed for customers to enjoy.
+        Treasures also brings bakery and confectionery favourites together in
+        one convenient place, from everyday bread to sweet treats and cakes.
       </p>
 
-      <p>
-        Whether you're picking up something for home or adding a baked
-        favourite to your visit, there's something worth discovering.
-      </p>
-
-      <div class="bakery-mini">
+      <div class="bakery-gallery">
         <div class="mini">
-          <img src="cake.jpg" alt="Cake from Treasures">
+          <img src="bakery-staff.jpg" alt="Treasures bakery staff" loading="lazy">
         </div>
         <div class="mini">
-          <img src="food-display.jpg" alt="Fresh food display">
+          <img src="cake.jpg" alt="Cake from Treasures bakery" loading="lazy">
         </div>
       </div>
-
-      <a class="btn" href="#gallery">View Bakery Photos</a>
     </div>
-
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
+<section class="section gallery-section" id="gallery">
   <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">Our Gallery</div>
-      <h2>Good Food, Great Moments</h2>
+    <div class="section-head">
+      <span class="eyebrow">Our Gallery</span>
+      <h2>Good food. Great moments.</h2>
       <p>
-        Take a look at the food, people, bakery and atmosphere at Treasures Restaurant.
+        A collection of food, bakery, restaurant and outdoor moments from Treasures.
       </p>
     </div>
 
     <div class="gallery-grid">
-
-      <div class="gallery-item">
-        <img src="treasures-front.jpg" alt="Treasures Restaurant front view">
-      </div>
-
-      <div class="gallery-item">
-        <img src="jollof-chicken.jpg" alt="Jollof rice and chicken">
-      </div>
-
-      <div class="gallery-item">
-        <img src="cake.jpg" alt="Treasures cake">
-      </div>
-
-      <div class="gallery-item">
-        <img src="food-display.jpg" alt="Treasures food display">
-      </div>
-
-      <div class="gallery-item">
-        <img src="restaurant-meal.jpg" alt="Restaurant meal">
-      </div>
-
-      <div class="gallery-item">
-        <img src="traditional-meal.jpg" alt="Traditional meal">
-      </div>
-
-      <div class="gallery-item">
-        <img src="bakery-staff.jpg" alt="Treasures bakery staff">
-      </div>
-
-      <div class="gallery-item">
-        <img src="order-counter.jpg" alt="Treasures order counter">
-      </div>
-
-      <div class="gallery-item">
-        <img src="outdoor-seating.jpg" alt="Treasures outdoor seating">
-      </div>
-
-      <div class="gallery-item">
-        <img src="family-outdoor.jpg" alt="Treasures outdoor family area">
-      </div>
-
-      <!-- Additional placement of selected images creates a richer visual flow -->
-      <div class="gallery-item">
-        <img src="jollof-chicken.jpg" alt="Treasures meal">
-      </div>
-
-      <div class="gallery-item">
-        <img src="treasures-front.jpg" alt="Treasures Restaurant exterior">
-      </div>
-
+      <figure class="gallery-item">
+        <img src="treasures-front.jpg" alt="Treasures Restaurant front view" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="restaurant-meal.jpg" alt="Treasures restaurant meal" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="jollof-chicken.jpg" alt="Jollof rice with chicken" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="traditional-meal.jpg" alt="Traditional meal at Treasures" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="family-outdoor.jpg" alt="Treasures outdoor family area" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="outdoor-seating.jpg" alt="Treasures outdoor seating" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="order-counter.jpg" alt="Treasures order counter" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="food-display.jpg" alt="Treasures food and bakery display" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="bakery-staff.jpg" alt="Treasures bakery staff" loading="lazy">
+      </figure>
+      <figure class="gallery-item">
+        <img src="cake.jpg" alt="Treasures cake" loading="lazy">
+      </figure>
     </div>
+
+    <p class="gallery-note">
+      Every photo is used intentionally — no giant repeated image wall.
+    </p>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="contact">
-  <div class="container">
-    <h2>Come Make Great Moments.</h2>
-    <p>
-      Visit Treasures for good food, fresh bakery favourites and a welcoming atmosphere.
-    </p>
+<section class="section visit" id="contact">
+  <div class="container visit-grid">
+    <div class="visit-copy">
+      <span class="eyebrow">Visit Treasures</span>
+      <h2>Come hungry. Leave happy.</h2>
+      <p>
+        Find Treasures on Ankpa Road in Lokoja. Call ahead, get directions or
+        contact the restaurant directly.
+      </p>
 
-    <div class="buttons" style="justify-content:center">
-      <a class="btn" href="#home">Back to Top</a>
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>
+            <small>Address</small>
+            <span>QPVJ+R74, Ankpa Road, Lokoja 260101, Kogi, Nigeria</span>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <small>Phone</small>
+            <a href="tel:+2348033568745">+234 803 356 8745</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">💬</div>
+          <div>
+            <small>WhatsApp</small>
+            <a href="https://wa.me/2348033568745" target="_blank" rel="noopener">
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">🕒</div>
+          <div>
+            <small>Opening Hours</small>
+            <span>Daily · 6:30 AM – 9:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="btns">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=QPVJ%2BR74%2C%20Ankpa%20Road%2C%20Lokoja%2C%20Kogi%2C%20Nigeria" target="_blank" rel="noopener">
+          Get Directions
+        </a>
+        <a class="btn btn-outline" href="tel:+2348033568745">Call Treasures</a>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        title="Map showing Treasures Restaurant in Lokoja"
+        src="https://www.google.com/maps?q=QPVJ%2BR74%2C%20Ankpa%20Road%2C%20Lokoja%2C%20Kogi%2C%20Nigeria&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
-
     <div class="footer-grid">
-
       <div class="footer-brand">
-        <h2>TREASURE<span>S</span></h2>
-        <p>
-          Good food. Warm atmosphere. Great moments.
-        </p>
+        <div class="logo">TREASURE<span>S</span></div>
+        <p>Good food. Warm atmosphere. Great moments.</p>
       </div>
 
-      <div>
+      <div class="footer-col">
         <h3>Explore</h3>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#food">Food</a>
+        <a href="#experience">Experience</a>
+        <a href="#bakery">Bakery</a>
         <a href="#gallery">Gallery</a>
       </div>
 
-      <div>
-        <h3>Discover</h3>
-        <a href="#experience">Restaurant Experience</a>
-        <a href="#bakery">Bakery</a>
+      <div class="footer-col">
+        <h3>Contact</h3>
         <a href="#contact">Visit Treasures</a>
+        <a href="tel:+2348033568745">+234 803 356 8745</a>
+        <a href="https://wa.me/2348033568745" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=QPVJ%2BR74%2C%20Ankpa%20Road%2C%20Lokoja%2C%20Kogi%2C%20Nigeria" target="_blank" rel="noopener">Open in Google Maps</a>
       </div>
-
     </div>
 
     <div class="footer-bottom">
-      © 2026 Treasures Restaurant. All rights reserved.
+      <span>© 2026 Treasures Restaurant. All rights reserved.</span>
+      <span>Lokoja, Kogi, Nigeria</span>
     </div>
-
   </div>
 </footer>
 
 <script>
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", function(){
-  navLinks.classList.toggle("open");
-  menuBtn.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
-});
-
-document.querySelectorAll(".nav-links a").forEach(function(link){
-  link.addEventListener("click", function(){
-    navLinks.classList.remove("open");
-    menuBtn.textContent = "☰";
-  });
-});
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('navLinks').classList.remove('open');
+}
 </script>
 
 </body>
- </html>
+</html>
