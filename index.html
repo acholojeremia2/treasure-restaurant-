@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Treasures Restaurant — good food, warm atmosphere and great moments in Lokoja, Kogi.">
+  <meta name="description" content="Treasures Restaurant — good food, warm atmosphere and great moments in Lokoja, Kogi State, Nigeria.">
   <title>Treasures Restaurant | Lokoja</title>
 
   <style>
@@ -28,14 +28,16 @@
     }
     img{display:block;width:100%;height:auto}
     a{text-decoration:none;color:inherit}
+    section{padding:95px 24px;scroll-margin-top:76px}
+    .section{max-width:1180px;margin:auto}
+    .cream{background:var(--cream)}
 
     header{
       position:sticky;
       top:0;
       z-index:1000;
       background:rgba(17,17,17,.98);
-      color:#fff;
-      box-shadow:0 4px 20px rgba(0,0,0,.14);
+      box-shadow:0 8px 30px rgba(0,0,0,.25);
     }
 
     .nav{
@@ -52,6 +54,7 @@
       font-size:34px;
       font-weight:900;
       letter-spacing:-1px;
+      color:#fff;
     }
     .logo span{color:var(--orange)}
 
@@ -66,18 +69,27 @@
 
     .nav-links{
       display:flex;
-      gap:28px;
+      align-items:center;
+      gap:24px;
       list-style:none;
       font-weight:700;
     }
-    .nav-links a{color:#fff;opacity:.9}
-    .nav-links a:hover{color:var(--orange)}
+    .nav-links a{
+      color:#fff;
+      opacity:.9;
+      transition:color .2s ease,opacity .2s ease;
+    }
+    .nav-links a:hover{
+      color:var(--orange);
+      opacity:1;
+    }
 
     .hero{
       background:var(--black);
       color:#fff;
       padding:70px 24px 85px;
     }
+
     .hero-inner{
       max-width:1180px;
       margin:auto;
@@ -86,6 +98,7 @@
       gap:55px;
       align-items:center;
     }
+
     .eyebrow,.section-number{
       color:var(--orange);
       text-transform:uppercase;
@@ -93,6 +106,7 @@
       font-weight:900;
       font-size:14px;
     }
+
     .hero h1{
       font-size:clamp(48px,7vw,88px);
       line-height:1;
@@ -100,17 +114,20 @@
       letter-spacing:-3px;
     }
     .hero h1 span{color:var(--orange)}
+
     .hero p{
       color:#d8d8d8;
       font-size:20px;
       max-width:610px;
     }
+
     .hero-buttons{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
       margin-top:30px;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -120,32 +137,39 @@
       border-radius:999px;
       font-weight:800;
       border:1px solid var(--orange);
+      transition:transform .2s ease,background .2s ease;
     }
+    .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:var(--orange);color:#fff}
     .btn-secondary{color:#fff;background:transparent}
 
     .hero-photo{
       border-radius:28px;
       overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,.35);
+      box-shadow:0 20px 55px rgba(0,0,0,.35);
     }
-    .hero-photo img{aspect-ratio:4/3;object-fit:cover}
+    .hero-photo img{
+      aspect-ratio:4/3;
+      object-fit:cover;
+    }
 
-    section{padding:95px 24px}
-    .section{
-      max-width:1180px;
-      margin:auto;
+    .section-heading{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 48px;
     }
-    .section-heading{text-align:center;max-width:760px;margin:0 auto 48px}
+
     .section-heading h2{
       font-size:clamp(38px,5vw,62px);
       line-height:1.05;
       letter-spacing:-2px;
       margin:12px 0 18px;
     }
-    .section-heading p{font-size:18px;color:var(--muted)}
 
-    .cream{background:var(--cream)}
+    .section-heading p{
+      font-size:18px;
+      color:var(--muted);
+    }
 
     .intro{
       display:grid;
@@ -153,12 +177,28 @@
       gap:55px;
       align-items:center;
     }
-    .intro h2{font-size:clamp(38px,5vw,60px);line-height:1.05}
-    .intro p{color:var(--muted);font-size:18px;margin-top:20px}
+
+    .intro h2{
+      font-size:clamp(38px,5vw,60px);
+      line-height:1.05;
+      letter-spacing:-2px;
+    }
+
+    .intro p{
+      color:var(--muted);
+      font-size:18px;
+      margin-top:20px;
+    }
+
     .intro-photo{
       border-radius:28px;
       overflow:hidden;
       box-shadow:var(--shadow);
+    }
+
+    .intro-photo img{
+      aspect-ratio:4/3;
+      object-fit:cover;
     }
 
     .cards{
@@ -166,40 +206,29 @@
       grid-template-columns:repeat(3,1fr);
       gap:22px;
     }
+
     .card{
       background:#fff;
       border:1px solid var(--border);
       border-radius:24px;
       overflow:hidden;
       box-shadow:0 8px 25px rgba(0,0,0,.04);
+      transition:transform .2s ease,box-shadow .2s ease;
     }
-    .card img{height:260px;object-fit:cover}
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 15px 35px rgba(0,0,0,.09);
+    }
+
+    .card img{
+      height:260px;
+      object-fit:cover;
+    }
+
     .card-body{padding:24px}
     .card h3{font-size:25px;margin-bottom:8px}
     .card p{color:var(--muted)}
-
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
-    }
-    .gallery figure{
-      overflow:hidden;
-      border-radius:24px;
-      background:#eee;
-      box-shadow:var(--shadow);
-    }
-    .gallery img{
-      aspect-ratio:4/3;
-      object-fit:cover;
-      transition:transform .35s ease;
-    }
-    .gallery figure:hover img{transform:scale(1.035)}
-    figcaption{
-      background:#fff;
-      padding:14px 17px;
-      font-weight:800;
-    }
 
     .traditional{
       display:grid;
@@ -207,12 +236,21 @@
       gap:30px;
       align-items:stretch;
     }
+
     .traditional .big-image{
       border-radius:28px;
       overflow:hidden;
       min-height:100%;
+      box-shadow:var(--shadow);
     }
-    .traditional .big-image img{height:100%;object-fit:cover}
+
+    .traditional .big-image img{
+      width:100%;
+      height:100%;
+      min-height:440px;
+      object-fit:cover;
+    }
+
     .traditional-copy{
       background:#fff;
       border:1px solid var(--border);
@@ -222,22 +260,87 @@
       flex-direction:column;
       justify-content:center;
     }
-    .traditional-copy h2{font-size:45px;line-height:1.08;margin:12px 0 18px}
-    .traditional-copy p{color:var(--muted);font-size:18px}
+
+    .traditional-copy h2{
+      font-size:45px;
+      line-height:1.08;
+      margin:12px 0 18px;
+    }
+
+    .traditional-copy p{
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .text-cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .text-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 8px 25px rgba(0,0,0,.04);
+    }
+
+    .text-card h3{
+      font-size:25px;
+      margin-bottom:10px;
+    }
+
+    .text-card p{color:var(--muted)}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+
+    .gallery figure{
+      overflow:hidden;
+      border-radius:24px;
+      background:#eee;
+      box-shadow:var(--shadow);
+    }
+
+    .gallery img{
+      aspect-ratio:4/3;
+      object-fit:cover;
+      transition:transform .35s ease;
+    }
+
+    .gallery figure:hover img{transform:scale(1.035)}
+
+    figcaption{
+      background:#fff;
+      padding:14px 17px;
+      font-weight:800;
+    }
 
     .contact-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:30px;
+      align-items:stretch;
     }
+
     .contact-card{
       background:#fff;
       border:1px solid var(--border);
       border-radius:28px;
       padding:35px;
     }
-    .contact-card h3{font-size:30px;margin-bottom:20px}
+
+    .contact-card h3{
+      font-size:30px;
+      margin-bottom:20px;
+    }
+
     .contact-item{margin:18px 0}
+
     .contact-item strong{
       display:block;
       color:var(--orange);
@@ -245,7 +348,15 @@
       font-size:12px;
       letter-spacing:2px;
     }
-    .contact-item a{font-size:19px;font-weight:700}
+
+    .contact-item p,
+    .contact-item a{
+      font-size:18px;
+      font-weight:700;
+    }
+
+    .contact-item a:hover{color:var(--orange)}
+
     .map{
       width:100%;
       min-height:430px;
@@ -259,6 +370,7 @@
       color:#fff;
       padding:65px 24px 25px;
     }
+
     .footer-grid{
       max-width:1180px;
       margin:auto;
@@ -266,10 +378,17 @@
       grid-template-columns:1.5fr 1fr 1fr 1fr;
       gap:40px;
     }
-    footer h3{margin-bottom:16px;color:var(--orange)}
+
+    footer h3{
+      margin-bottom:16px;
+      color:var(--orange);
+    }
+
     footer p,footer li{color:#bdbdbd}
     footer ul{list-style:none}
     footer li{margin:7px 0}
+    footer a:hover{color:#fff}
+
     .copyright{
       max-width:1180px;
       margin:45px auto 0;
@@ -279,25 +398,13 @@
       text-align:center;
     }
 
-    /* Keeps non-photo sections clean and prevents the same image
-       from being repeated in multiple sections. */
-    .text-cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+    @media(max-width:1050px){
+      .nav-links{gap:16px;font-size:14px}
     }
-    .text-card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:30px;
-      box-shadow:0 8px 25px rgba(0,0,0,.04);
-    }
-    .text-card h3{font-size:25px;margin-bottom:10px}
-    .text-card p{color:var(--muted)}
 
     @media(max-width:850px){
       .menu-btn{display:block}
+
       .nav-links{
         display:none;
         position:absolute;
@@ -305,32 +412,79 @@
         left:0;
         right:0;
         background:#111;
-        padding:20px 24px 28px;
+        padding:10px 24px 20px;
         flex-direction:column;
+        align-items:stretch;
         gap:0;
+        box-shadow:0 15px 30px rgba(0,0,0,.25);
       }
-      .nav-links.show{display:flex}
-      .nav-links li{border-bottom:1px solid #292929}
-      .nav-links a{display:block;padding:13px 0}
 
-      .hero-inner,.intro,.traditional,.contact-grid{grid-template-columns:1fr}
+      .nav-links.show{display:flex}
+
+      .nav-links li{
+        border-bottom:1px solid #292929;
+      }
+
+      .nav-links li:last-child{border-bottom:0}
+
+      .nav-links a{
+        display:block;
+        padding:13px 0;
+        font-size:16px;
+      }
+
+      .hero-inner,
+      .intro,
+      .traditional,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
       .hero{padding-top:50px}
       .hero h1{letter-spacing:-2px}
-      .cards,.text-cards{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr 1fr}
+
+      .cards,
+      .text-cards{
+        grid-template-columns:1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
     }
 
     @media(max-width:520px){
       .nav{padding:0 18px}
       .logo{font-size:29px}
       section{padding:70px 18px}
-      .hero{padding-left:18px;padding-right:18px}
+      .hero{
+        padding-left:18px;
+        padding-right:18px;
+      }
       .hero p{font-size:18px}
-      .traditional-copy{padding:30px}
+      .hero-photo{border-radius:22px}
+      .intro-photo{border-radius:22px}
+      .traditional-copy{
+        padding:30px;
+        border-radius:22px;
+      }
       .traditional-copy h2{font-size:38px}
+      .traditional .big-image{border-radius:22px}
+      .traditional .big-image img{min-height:300px}
+      .gallery figure{border-radius:22px}
+      .contact-card{padding:28px;border-radius:22px}
+      .map{min-height:350px;border-radius:22px}
       .footer-grid{grid-template-columns:1fr}
       .card img{height:230px}
+      .btn{
+        width:100%;
+        padding:0 18px;
+      }
+      .hero-buttons{width:100%}
     }
   </style>
 </head>
@@ -341,7 +495,7 @@
   <nav class="nav">
     <a class="logo" href="#home">TREASURE<span>S</span></a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
@@ -365,7 +519,10 @@
       <div>
         <div class="eyebrow">01 · Front View</div>
         <h1>Welcome to <span>Treasures</span></h1>
-        <p>Good food. Warm atmosphere. Great moments. Come in, enjoy a satisfying meal and experience the welcoming side of Treasures.</p>
+        <p>
+          Good food. Warm atmosphere. Great moments.
+          Come in, enjoy a satisfying meal and experience the welcoming side of Treasures.
+        </p>
 
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#food">Explore Our Food</a>
@@ -415,7 +572,7 @@
         <article class="card">
           <img src="jollof-chicken.jpg" alt="Jollof rice with chicken">
           <div class="card-body">
-            <h3>Jollof & Chicken</h3>
+            <h3>Jollof &amp; Chicken</h3>
             <p>A hearty Nigerian favourite served as a filling meal.</p>
           </div>
         </article>
@@ -465,18 +622,18 @@
     </div>
   </section>
 
-  <!-- DRINKS: no repeated restaurant image -->
+  <!-- DRINKS: text only, no restaurant image -->
   <section class="cream" id="drinks">
     <div class="section">
       <div class="section-heading">
-        <div class="section-number">04 · Drinks & Refreshments</div>
+        <div class="section-number">04 · Drinks &amp; Refreshments</div>
         <h2>Something Refreshing</h2>
         <p>Pair your meal with a refreshing drink and enjoy your time at Treasures.</p>
       </div>
 
       <div class="text-cards">
         <article class="text-card">
-          <h3>Refresh & Relax</h3>
+          <h3>Refresh &amp; Relax</h3>
           <p>Ask our team about the drinks and refreshments available with your meal.</p>
         </article>
 
@@ -497,7 +654,7 @@
   <section id="bakery">
     <div class="section">
       <div class="section-heading">
-        <div class="section-number">05 · Bread & Bakery</div>
+        <div class="section-number">05 · Bread &amp; Bakery</div>
         <h2>Freshly Baked Favourites</h2>
         <p>Discover Treasures bakery selections, from everyday bread to cakes and sweet treats.</p>
       </div>
@@ -505,18 +662,18 @@
       <div class="gallery">
         <figure>
           <img src="bakery-staff.jpg" alt="Treasures bakery staff and bread shelves">
-          <figcaption>Bread & Bakery</figcaption>
+          <figcaption>Bread &amp; Bakery</figcaption>
         </figure>
 
         <figure>
           <img src="cake.jpg" alt="Cake from Treasures bakery">
-          <figcaption>Cakes & Celebrations</figcaption>
+          <figcaption>Cakes &amp; Celebrations</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- RESTAURANT EXPERIENCE: order-counter.jpg and outdoor-seating.jpg are used only here -->
+  <!-- RESTAURANT EXPERIENCE: these pictures are used only here -->
   <section class="cream" id="experience">
     <div class="section">
       <div class="section-heading">
@@ -539,12 +696,12 @@
     </div>
   </section>
 
-  <!-- CUSTOMERS: kept as a clean text section so no picture is duplicated -->
+  <!-- CUSTOMERS: text only, no repeated picture -->
   <section id="customers">
     <div class="section">
       <div class="section-heading">
         <div class="section-number">07 · Customers</div>
-        <h2>Made for People & Moments</h2>
+        <h2>Made for People &amp; Moments</h2>
         <p>Real moments from people enjoying food and time at Treasures.</p>
       </div>
 
@@ -567,11 +724,11 @@
     </div>
   </section>
 
-  <!-- CONTACT / ADDRESS / MAP -->
+  <!-- CONTACT & VISIT: no restaurant picture is reused here -->
   <section class="cream" id="contact">
     <div class="section">
       <div class="section-heading">
-        <div class="section-number">08 · Contact & Visit</div>
+        <div class="section-number">08 · Contact &amp; Visit</div>
         <h2>Come Visit Treasures</h2>
         <p>Find us in Lokoja and get in touch before your visit.</p>
       </div>
@@ -626,7 +783,7 @@
       <div class="logo">TREASURE<span>S</span></div>
       <p style="margin-top:16px">
         Good food. Warm atmosphere. Great moments.
-        Treasures brings food, bakery and family-friendly experiences together.
+     Treasures brings food, bakery and family-friendly experiences together.
       </p>
     </div>
 
@@ -670,14 +827,17 @@
   const navLinks = document.getElementById("navLinks");
 
   menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+    const isOpen = navLinks.classList.toggle("show");
+    menuBtn.setAttribute("aria-expanded", isOpen);
   });
 
   document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => navLinks.classList.remove("show"));
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
   });
 </script>
 
 </body>
-  </html>
-              
+</html>
