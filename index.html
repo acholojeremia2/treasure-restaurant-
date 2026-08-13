@@ -1,815 +1,1293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="Treasures Restaurant & Café in Lokoja, Kogi State — good food, refreshing drinks and memorable moments."
-  >
+<meta name="description" content="Treasures Restaurant in Lokoja, Kogi State, Nigeria — good food, warm atmosphere and great moments.">
 
-  <meta name="theme-color" content="#151515">
+<title>Treasures Restaurant | Lokoja</title>
 
-  <title>Treasures Restaurant | Lokoja</title>
+<style>
+:root{
+  --black:#111111;
+  --dark:#191919;
+  --orange:#f26b21;
+  --cream:#f8f3ed;
+  --white:#ffffff;
+  --text:#222222;
+  --muted:#6b6b6b;
+  --border:#eadfd4;
+  --shadow:0 15px 40px rgba(0,0,0,.09);
+}
 
-  <link rel="stylesheet" href="style.css">
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-  <style>
-    /* ================================
-       BASIC FIXES
-    ================================= */
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.65;
+  overflow-x:hidden;
+}
 
-    body {
-      margin: 0;
-      overflow-x: hidden;
-    }
+img{
+  display:block;
+  width:100%;
+  height:auto;
+}
 
-    section[id] {
-      scroll-margin-top: 90px;
-    }
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    /* ================================
-       HEADER
-    ================================= */
+.container{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-    }
+/* ================= HEADER ================= */
 
-    .site-header a {
-      text-decoration: none;
-    }
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  background:rgba(17,17,17,.98);
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
 
-    /* ================================
-       IMAGES
-    ================================= */
+.nav-container{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
 
-    .image-card {
-      width: 100%;
-      margin-top: 45px;
-      overflow: hidden;
-      border-radius: 28px;
-      background: #eee;
-    }
+.logo{
+  color:#fff;
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:-1px;
+  white-space:nowrap;
+}
 
-    .section-image {
-      display: block;
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      border-radius: 28px;
-    }
+.logo span,
+.site-footer span{
+  color:var(--orange);
+}
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-top: 45px;
-    }
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
 
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 25px;
-      background: #eee;
-    }
+.main-nav a{
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  transition:.25s;
+}
 
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-    }
+.main-nav a:hover{
+  color:var(--orange);
+}
 
-    /* ================================
-       CARDS
-    ================================= */
+.menu-toggle{
+  display:none;
+  width:45px;
+  height:45px;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  cursor:pointer;
+  padding:8px;
+}
 
-    .info-card {
-      border-radius: 28px;
-    }
+.menu-toggle span{
+  display:block;
+  height:3px;
+  background:#fff;
+  margin:5px 0;
+  border-radius:5px;
+}
 
-    /* ================================
-       MOBILE
-    ================================= */
+/* ================= GENERAL ================= */
 
-    @media (max-width: 700px) {
+.section{
+  padding:95px 0;
+}
 
-      html {
-        scroll-padding-top: 75px;
-      }
+.section-light{
+  background:#fff;
+}
 
-      section[id] {
-        scroll-margin-top: 75px;
-      }
+.section-cream{
+  background:var(--cream);
+}
 
-      .site-header {
-        min-height: 70px;
-      }
+.section-heading{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 50px;
+}
 
-      .section-image {
-        height: 360px;
-        border-radius: 24px;
-      }
+.eyebrow{
+  color:var(--orange);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
 
-      .image-card {
-        border-radius: 24px;
-      }
+.section-heading h2{
+  font-size:clamp(38px,5vw,62px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin:15px 0 20px;
+}
 
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
+.section-intro{
+  color:var(--muted);
+  font-size:18px;
+}
 
-      .gallery-item img {
-        height: 300px;
-      }
-    }
-  </style>
+/* ================= HOME ================= */
+
+.hero{
+  background:var(--black);
+  color:#fff;
+  padding:85px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.hero h1{
+  font-size:clamp(48px,7vw,86px);
+  line-height:.98;
+  letter-spacing:-4px;
+  margin:18px 0 25px;
+}
+
+.hero h1 span{
+  color:var(--orange);
+}
+
+.hero .lead{
+  color:#d5d5d5;
+  font-size:20px;
+  max-width:600px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.button{
+  min-height:50px;
+  padding:0 23px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  border:1px solid var(--orange);
+  transition:.25s;
+}
+
+.button-primary{
+  background:var(--orange);
+  color:#fff;
+}
+
+.button-primary:hover{
+  background:#d95712;
+  transform:translateY(-2px);
+}
+
+.button-secondary{
+  color:#fff;
+  background:transparent;
+}
+
+.button-secondary:hover{
+  background:#fff;
+  color:#111;
+}
+
+.hero-image{
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.hero-image img{
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.about-text h2{
+  font-size:clamp(38px,5vw,60px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin:15px 0 20px;
+}
+
+.about-text p{
+  color:var(--muted);
+  font-size:18px;
+  margin-bottom:18px;
+}
+
+.about-image{
+  overflow:hidden;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+}
+
+.about-image img{
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.card-image{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:25px;
+}
+
+.card-body h3{
+  font-size:25px;
+  margin-bottom:9px;
+}
+
+.card-body p{
+  color:var(--muted);
+}
+
+/* ================= TRADITIONAL ================= */
+
+.traditional-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:stretch;
+}
+
+.traditional-image{
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.traditional-image img{
+  height:100%;
+  min-height:450px;
+  object-fit:cover;
+}
+
+.traditional-content{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.traditional-content h2{
+  font-size:clamp(36px,5vw,55px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin:15px 0 20px;
+}
+
+.traditional-content p{
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* ================= TEXT CARDS ================= */
+
+.text-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.text-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.text-card h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.text-card p{
+  color:var(--muted);
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+.gallery-item{
+  background:#fff;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.gallery-item img{
+  aspect-ratio:4/3;
+  object-fit:cover;
+  transition:transform .35s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.035);
+}
+
+.gallery-caption{
+  padding:16px 20px;
+  font-weight:800;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.contact-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:40px;
+}
+
+.contact-card h3{
+  font-size:30px;
+  margin-bottom:25px;
+}
+
+.contact-item{
+  margin:20px 0;
+}
+
+.contact-label{
+  color:var(--orange);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:5px;
+}
+
+.contact-item p,
+.contact-item a{
+  font-size:18px;
+  font-weight:600;
+}
+
+.contact-item a:hover{
+  color:var(--orange);
+}
+
+.contact-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.map{
+  width:100%;
+  min-height:430px;
+  border:0;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  background:var(--black);
+  color:#fff;
+  padding:60px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:40px;
+}
+
+.site-footer h3{
+  color:var(--orange);
+  margin-bottom:15px;
+}
+
+.site-footer p{
+  color:#bdbdbd;
+  margin:7px 0;
+}
+
+.footer-logo{
+  color:#fff;
+  font-size:30px;
+  font-weight:900;
+  margin-bottom:15px;
+}
+
+.footer-links{
+  list-style:none;
+}
+
+.footer-links li{
+  margin:8px 0;
+}
+
+.footer-links a{
+  color:#bdbdbd;
+}
+
+.footer-links a:hover{
+  color:var(--orange);
+}
+
+.copyright{
+  border-top:1px solid #333;
+  margin-top:45px;
+  padding-top:22px;
+  text-align:center;
+  color:#888;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .main-nav{
+    gap:15px;
+  }
+
+  .main-nav a{
+    font-size:13px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .traditional-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image{
+    order:-1;
+  }
+
+  .cards,
+  .text-cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:700px){
+
+  html{
+    scroll-padding-top:70px;
+  }
+
+  .container{
+    width:min(100% - 32px,1180px);
+  }
+
+  .site-header{
+    min-height:70px;
+  }
+
+  .nav-container{
+    min-height:70px;
+  }
+
+  .logo{
+    font-size:27px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .main-nav{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:70px;
+    background:#111;
+    padding:10px 20px 25px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+  }
+
+  .main-nav.open{
+    display:flex;
+  }
+
+  .main-nav a{
+    padding:14px 5px;
+    border-bottom:1px solid #2b2b2b;
+    font-size:15px;
+  }
+
+  .section{
+    padding:70px 0;
+  }
+
+  .hero{
+    padding:60px 0 70px;
+  }
+
+  .hero-grid{
+    gap:35px;
+  }
+
+  .hero h1{
+    font-size:clamp(46px,14vw,70px);
+    letter-spacing:-3px;
+  }
+
+  .hero .lead{
+    font-size:18px;
+  }
+
+  .hero-image img{
+    aspect-ratio:4/3;
+  }
+
+  .section-heading{
+    margin-bottom:35px;
+  }
+
+  .section-heading h2{
+    font-size:42px;
+    letter-spacing:-1.5px;
+  }
+
+  .section-intro{
+    font-size:17px;
+  }
+
+  .cards,
+  .text-cards,
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .card-image{
+    height:240px;
+  }
+
+  .traditional-content{
+    padding:30px;
+  }
+
+  .traditional-image img{
+    min-height:330px;
+    height:330px;
+  }
+
+  .contact-card{
+    padding:28px;
+  }
+
+  .map{
+    min-height:350px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .copyright{
+    margin-top:30px;
+  }
+}
+
+@media(max-width:420px){
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .button{
+    width:100%;
+  }
+
+  .hero-buttons,
+  .contact-buttons{
+    flex-direction:column;
+  }
+
+  .section-heading h2{
+    font-size:37px;
+  }
+
+  .traditional-content h2{
+    font-size:36px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =================================
-       HEADER
-  ================================== -->
+<!-- ================= HEADER ================= -->
 
-  <header class="site-header">
+<header class="site-header">
 
-    <div class="container nav-container">
+  <div class="container nav-container">
 
-      <a
-        href="#home"
-        class="logo"
-        aria-label="Treasures Restaurant home"
-      >
-        TREASURE<span>S</span>
-      </a>
+    <a href="#home" class="logo">
+      TREASURE<span>S</span>
+    </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mainNav"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <nav
-        id="mainNav"
-        class="main-nav"
-        aria-label="Main navigation"
-      >
+    <nav class="main-nav" id="mainNav">
 
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#breakfast">Breakfast</a>
-        <a href="#drinks">Drinks</a>
-        <a href="#bakery">Bakery</a>
-        <a href="#experience">Experience</a>
-        <a href="#customers">Customers</a>
-        <a href="#contact">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#food">Food</a>
+      <a href="#traditional">Traditional</a>
+      <a href="#drinks">Drinks</a>
+      <a href="#bakery">Bakery</a>
+      <a href="#experience">Experience</a>
+      <a href="#customers">Customers</a>
+      <a href="#contact">Contact</a>
 
-      </nav>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+      <p class="eyebrow">WELCOME TO TREASURES</p>
+
+      <h1>
+        Good Food.<br>
+        <span>Great Moments.</span>
+      </h1>
+
+      <p class="lead">
+        A welcoming restaurant in Lokoja for good food,
+        refreshing drinks and quality time with family
+        and friends.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#food" class="button button-primary">
+          Explore Our Food
+        </a>
+
+        <a href="#contact" class="button button-secondary">
+          Visit Us
+        </a>
+
+      </div>
 
     </div>
 
-  </header>
+    <div class="hero-image">
+
+      <img
+        src="treasures-front.jpg"
+        alt="Front view of Treasures Restaurant in Lokoja"
+      >
+
+    </div>
+
+  </div>
+
+</section>
 
 
-  <main>
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+  <div class="container about-grid">
+
+    <div class="about-text">
+
+      <p class="eyebrow">01 · ABOUT TREASURES</p>
+
+      <h2>
+        A Place to Enjoy
+        Your Time
+      </h2>
+
+      <p>
+        Treasures brings together good food,
+        a welcoming atmosphere and a place
+        where family and friends can enjoy
+        quality time together.
+      </p>
+
+      <p>
+        Whether you are stopping in for a meal,
+        meeting friends or simply looking for
+        somewhere comfortable to relax,
+        Treasures welcomes you.
+      </p>
+
+    </div>
+
+    <div class="about-image">
+
+      <img
+        src="family-outdoor.jpg"
+        alt="Family-friendly outdoor area at Treasures Restaurant"
+        loading="lazy"
+      >
+
+    </div>
+
+  </div>
+
+</section>
 
 
-    <!-- =================================
-         01 HOME
-    ================================== -->
+<!-- ================= FOOD ================= -->
 
-    <section id="home" class="hero section">
+<section class="section section-cream" id="food">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="hero-content">
+    <div class="section-heading">
 
-          <p class="eyebrow">
-            WELCOME TO TREASURES
+      <p class="eyebrow">02 · FOOD</p>
+
+      <h2>Fresh From Our Kitchen</h2>
+
+      <p class="section-intro">
+        Enjoy satisfying meals prepared and served
+        at Treasures Restaurant.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <article class="card">
+
+        <img
+          class="card-image"
+          src="jollof-chicken.jpg"
+          alt="Jollof rice with chicken"
+          loading="lazy"
+        >
+
+        <div class="card-body">
+
+          <h3>Jollof & Chicken</h3>
+
+          <p>
+            A hearty Nigerian favourite served
+            as a satisfying meal.
           </p>
-
-          <h1>
-            Good Food.<br>
-            Great Moments.
-          </h1>
-
-          <p class="lead">
-            A welcoming place in Lokoja for good food,
-            refreshing drinks and quality time with
-            family and friends.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a
-              class="button button-primary"
-              href="#breakfast"
-            >
-              Explore Our Food
-            </a>
-
-            <a
-              class="button button-secondary"
-              href="#contact"
-            >
-              Visit Us
-            </a>
-
-          </div>
 
         </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <img
+          class="card-image"
+          src="restaurant-meal.jpg"
+          alt="Restaurant meal with rice and chicken"
+          loading="lazy"
+        >
+
+        <div class="card-body">
+
+          <h3>Restaurant Favourites</h3>
+
+          <p>
+            Comforting meals for lunch,
+            dinner and everyday cravings.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <img
+          class="card-image"
+          src="food-display.jpg"
+          alt="Fresh food displayed at Treasures Restaurant"
+          loading="lazy"
+        >
+
+        <div class="card-body">
+
+          <h3>Freshly Served</h3>
+
+          <p>
+            Explore the food available and
+            choose something you will enjoy.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= TRADITIONAL ================= -->
+
+<section class="section" id="traditional">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">03 · TRADITIONAL DISH</p>
+
+      <h2>Local Flavours</h2>
+
+      <p class="section-intro">
+        Enjoy traditional Nigerian food served
+        in a simple and welcoming setting.
+      </p>
+
+    </div>
+
+
+    <div class="traditional-grid">
+
+      <div class="traditional-image">
+
+        <img
+          src="traditional-meal.jpg"
+          alt="Traditional Nigerian meal at Treasures Restaurant"
+          loading="lazy"
+        >
 
       </div>
 
-    </section>
 
+      <div class="traditional-content">
 
+        <p class="eyebrow">
+          MADE FOR A PROPER MEAL
+        </p>
 
-    <!-- =================================
-         02 ABOUT
-    ================================== -->
+        <h2>
+          Traditional Taste
+          at Treasures
+        </h2>
 
-    <section
-      id="about"
-      class="section section-light"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <p class="eyebrow">
-            02 · ABOUT TREASURES
-          </p>
-
-          <h2>
-            A Place to Enjoy<br>
-            Your Time
-          </h2>
-
-          <p class="section-intro">
-            Treasures is a relaxed place to sit down,
-            enjoy a meal and spend time with the
-            people who matter.
-          </p>
-
-        </div>
-
-
-        <div class="cards-grid three">
-
-          <article class="info-card">
-
-            <h3>
-              Good Food
-            </h3>
-
-            <p>
-              Enjoy familiar meals and freshly
-              prepared selections in a relaxed setting.
-            </p>
-
-          </article>
-
-
-          <article class="info-card">
-
-            <h3>
-              Good Company
-            </h3>
-
-            <p>
-              A welcoming space for family,
-              friends and everyday moments together.
-            </p>
-
-          </article>
-
-
-          <article class="info-card">
-
-            <h3>
-              Enjoy Your Time
-            </h3>
-
-            <p>
-              Take your time, enjoy your meal
-              and relax with family and friends.
-            </p>
-
-          </article>
-
-        </div>
+        <p>
+          From satisfying soups and swallows
+          to familiar local favourites,
+          Treasures is a place to enjoy food
+          that feels like home.
+        </p>
 
       </div>
 
-    </section>
+    </div>
 
+  </div>
 
+</section>
 
-    <!-- =================================
-         03 BREAKFAST & FOOD
-    ================================== -->
 
-    <section
-      id="breakfast"
-      class="section"
-    >
+<!-- ================= DRINKS ================= -->
 
-      <div class="container">
+<section class="section section-cream" id="drinks">
 
-        <div class="section-heading">
+  <div class="container">
 
-          <p class="eyebrow">
-            03 · BREAKFAST & FOOD
-          </p>
+    <div class="section-heading">
 
-          <h2>
-            Familiar Favourites
-          </h2>
+      <p class="eyebrow">04 · DRINKS & REFRESHMENTS</p>
 
-          <p class="section-intro">
-            Start your day with satisfying breakfast
-            favourites and comforting meals made
-            for a good visit.
-          </p>
+      <h2>Something Refreshing</h2>
 
-        </div>
+      <p class="section-intro">
+        Pair your meal with a refreshing drink
+        and enjoy your time at Treasures.
+      </p>
 
+    </div>
 
-        <div class="cards-grid three">
 
-          <article class="info-card">
+    <div class="text-cards">
 
-            <h3>
-              Full English Breakfast
-            </h3>
+      <article class="text-card">
 
-            <p>
-              Egg, sausages, bacon, mushrooms,
-              baked beans and other breakfast
-              favourites.
-            </p>
+        <h3>Refresh & Relax</h3>
 
-          </article>
+        <p>
+          Ask our team about the drinks and
+          refreshments available with your meal.
+        </p>
 
+      </article>
 
-          <article class="info-card">
 
-            <h3>
-              Breakfast Sandwiches
-            </h3>
+      <article class="text-card">
 
-            <p>
-              A filling breakfast sandwich with
-              familiar ingredients and a freshly
-              prepared taste.
-            </p>
+        <h3>With Your Meal</h3>
 
-          </article>
+        <p>
+          Choose a drink to complement your
+          food and make your visit more enjoyable.
+        </p>
 
+      </article>
 
-          <article class="info-card">
 
-            <h3>
-              Jacket Potatoes
-            </h3>
+      <article class="text-card">
 
-            <p>
-              Warm jacket potatoes with tasty
-              toppings and a fresh side salad.
-            </p>
+        <h3>Enjoy Your Time</h3>
 
-          </article>
+        <p>
+          Take your time, enjoy your meal
+          and relax with family and friends.
+        </p>
 
-        </div>
+      </article>
 
+    </div>
 
-        <!-- FULL ENGLISH BREAKFAST -->
+  </div>
 
-        <div class="image-card">
+</section>
 
-          <img
-            class="section-image"
-            src="full-english-breakfast.jpg"
-            alt="Full English breakfast at Treasures Restaurant"
-            loading="lazy"
-          >
 
-        </div>
+<!-- ================= BAKERY ================= -->
 
+<section class="section" id="bakery">
 
-        <!-- BREAKFAST SANDWICH -->
+  <div class="container">
 
-        <div class="image-card">
+    <div class="section-heading">
 
-          <img
-            class="section-image"
-            src="breakfast-sandwich.jpg"
-            alt="Breakfast sandwich at Treasures Restaurant"
-            loading="lazy"
-          >
+      <p class="eyebrow">05 · BREAD & BAKERY</p>
 
-        </div>
+      <h2>Freshly Baked Favourites</h2>
 
+      <p class="section-intro">
+        Discover Treasures bakery selections,
+        from everyday bread to cakes and
+        sweet treats.
+      </p>
 
-        <!-- JACKET POTATO -->
+    </div>
 
-        <div class="image-card">
 
-          <img
-            class="section-image"
-            src="jacket-potato.jpg"
-            alt="Jacket potato with toppings and salad"
-            loading="lazy"
-          >
+    <div class="gallery">
 
-        </div>
+      <figure class="gallery-item">
 
-      </div>
+        <img
+          src="bakery-staff.jpg"
+          alt="Treasures bakery staff and bread"
+          loading="lazy"
+        >
 
-    </section>
+        <figcaption class="gallery-caption">
+          Bread & Bakery
+        </figcaption>
 
+      </figure>
 
 
-    <!-- =================================
-         04 DRINKS
-    ================================== -->
+      <figure class="gallery-item">
 
-    <section
-      id="drinks"
-      class="section section-cream"
-    >
+        <img
+          src="cake.jpg"
+          alt="Cake from Treasures bakery"
+          loading="lazy"
+        >
 
-      <div class="container">
+        <figcaption class="gallery-caption">
+          Cakes & Celebrations
+        </figcaption>
 
-        <div class="section-heading">
+      </figure>
 
-          <p class="eyebrow">
-            04 · DRINKS & REFRESHMENTS
-          </p>
+    </div>
 
-          <h2>
-            Something<br>
-            Refreshing
-          </h2>
+  </div>
 
-          <p class="section-intro">
-            Pair your meal with a refreshing drink
-            and enjoy your time at Treasures.
-          </p>
+</section>
 
-        </div>
 
+<!-- ================= EXPERIENCE ================= -->
 
-        <div class="cards-grid three">
+<section class="section section-cream" id="experience">
 
-          <article class="info-card">
+  <div class="container">
 
-            <h3>
-              Refresh & Relax
-            </h3>
+    <div class="section-heading">
 
-            <p>
-              Ask our team about the drinks and
-              refreshments available with your meal.
-            </p>
+      <p class="eyebrow">06 · RESTAURANT EXPERIENCE</p>
 
-          </article>
+      <h2>More Than Just a Meal</h2>
 
+      <p class="section-intro">
+        A look at the restaurant, from the service
+        counter to the outdoor seating areas.
+      </p>
 
-          <article class="info-card">
+    </div>
 
-            <h3>
-              With Your Meal
-            </h3>
 
-            <p>
-              Choose a drink to complement your
-              food and make your visit more enjoyable.
-            </p>
+    <div class="gallery">
 
-          </article>
+      <figure class="gallery-item">
 
+        <img
+          src="order-counter.jpg"
+          alt="Treasures Restaurant service counter"
+          loading="lazy"
+        >
 
-          <article class="info-card">
+        <figcaption class="gallery-caption">
+          Restaurant Counter
+        </figcaption>
 
-            <h3>
-              Enjoy Your Time
-            </h3>
+      </figure>
 
-            <p>
-              Take your time, enjoy your meal and
-              relax with family and friends.
-            </p>
 
-          </article>
+      <figure class="gallery-item">
 
-        </div>
+        <img
+          src="outdoor-seating.jpg"
+          alt="Outdoor seating at Treasures Restaurant"
+          loading="lazy"
+        >
 
+        <figcaption class="gallery-caption">
+          Outdoor Seating
+        </figcaption>
 
-        <!-- COFFEE / DRINK -->
+      </figure>
 
-        <div class="image-card">
+    </div>
 
-          <img
-            class="section-image"
-            src="coffee.jpg"
-            alt="Coffee and food at Treasures Restaurant"
-            loading="lazy"
-          >
 
-        </div>
+    <div class="text-cards" style="margin-top:24px;">
 
-      </div>
+      <article class="text-card">
 
-    </section>
+        <h3>Comfortable Space</h3>
 
+        <p>
+          A relaxed environment where you
+          can enjoy your food and your time.
+        </p>
 
+      </article>
 
-    <!-- =================================
-         05 BAKERY
-    ================================== -->
 
-    <section
-      id="bakery"
-      class="section"
-    >
+      <article class="text-card">
 
-      <div class="container">
+        <h3>Friendly Service</h3>
 
-        <div class="section-heading">
+        <p>
+          A welcoming experience from
+          the moment you arrive.
+        </p>
 
-          <p class="eyebrow">
-            05 · BREAD & BAKERY
-          </p>
+      </article>
 
-          <h2>
-            Freshly Baked<br>
-            Favourites
-          </h2>
 
-          <p class="section-intro">
-            Discover Treasures bakery selections,
-            from everyday bread to cakes and
-            sweet treats.
-          </p>
+      <article class="text-card">
 
-        </div>
+        <h3>Enjoy Your Visit</h3>
 
+        <p>
+          Come for a meal and enjoy the
+          moments that make your visit special.
+        </p>
 
-        <div class="cards-grid three">
+      </article>
 
-          <article class="info-card">
+    </div>
 
-            <h3>
-              Fresh Bread
-            </h3>
+  </div>
 
-            <p>
-              Everyday bakery favourites for
-              a simple and satisfying treat.
-            </p>
+</section>
 
-          </article>
 
+<!-- ================= CUSTOMERS ================= -->
 
-          <article class="info-card">
+<section class="section" id="customers">
 
-            <h3>
-              Cakes & Celebrations
-            </h3>
+  <div class="container">
 
-            <p>
-              Sweet selections for sharing and
-              special occasions.
-            </p>
+    <div class="section-heading">
 
-          </article>
+      <p class="eyebrow">07 · CUSTOMERS</p>
 
+      <h2>Made for People & Moments</h2>
 
-          <article class="info-card">
+      <p class="section-intro">
+        A welcoming place for people to enjoy
+        food, family and good company.
+      </p>
 
-            <h3>
-              Cheese on Toast
-            </h3>
+    </div>
 
-            <p>
-              Simple, warm and comforting —
-              a classic favourite.
-            </p>
 
-          </article>
+    <div class="text-cards">
 
-        </div>
+      <article class="text-card">
 
+        <h3>Family Time</h3>
 
-        <!-- BAKERY PHOTO -->
+        <p>
+          A welcoming place to sit down,
+          eat together and spend quality time.
+        </p>
 
-        <div class="image-card">
+      </article>
 
-          <img
-            class="section-image"
-            src="bakery.jpg"
-            alt="Fresh bread and bakery selections at Treasures"
-            loading="lazy"
-          >
 
-        </div>
+      <article class="text-card">
 
+        <h3>Good Food</h3>
 
-        <!-- CHEESE ON TOAST -->
+        <p>
+          Enjoy familiar meals and freshly
+          prepared selections in a relaxed setting.
+        </p>
 
-        <div class="image-card">
+      </article>
 
-          <img
-            class="section-image"
-            src="cheese-on-toast.jpg"
-            alt="Cheese on toast at Treasures Restaurant"
-            loading="lazy"
-          >
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================
-         06 RESTAURANT EXPERIENCE
-    ================================== -->
-
-    <section
-      id="experience"
-      class="section section-cream"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <p class="eyebrow">
-            06 · RESTAURANT EXPERIENCE
-          </p>
-
-          <h2>
-            More Than Just a<br>
-            Meal
-          </h2>
-
-          <p class="section-intro">
-            A look inside the restaurant, from the
-            service counter to the seating areas.
-          </p>
-
-        </div>
-
-
-        <!-- RESTAURANT INTERIOR -->
-
-        <div class="image-card">
-
-          <img
-            class="section-image"
-            src="restaurant-interior.jpg"
-            alt="Inside Treasures Restaurant"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="cards-grid three">
-
-          <article class="info-card">
-
-            <h3>
-              Comfortable Space
-            </h3>
-
-            <p>
-              A relaxed environment where you
-              can enjoy your food and your time.
-            </p>
-
-          </article>
-
-
-          <article class="info-card">
-
-            <h3>
-              Friendly Service
-            </h3>
-
-            <p>
-              A welcoming experience from the
-              moment you arrive.
-            </p>
-
-          </article>
-
-
-          <article class="info-card">
-
-            <h3>
-              Enjoy Your Visit
-            </h3>
-
-            <p>
-              Come for a meal and stay for the
-              moments that make your visit special.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =================================
-         07 CUSTOMERS / MOMENTS
-    ================================== -->
-
-    <section
-      id="customers"
-      class="section section-light"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <p class="eyebrow">
-            07 · CUSTOMERS
-          </p>
-
-          <h2>
-            Made for People &<br>
-            Moments
-          </h2>
-
-          <p class="section-intro">
-            Real moments from people enjoying
-            food and time at Treasures.
-          </p>
-
-        </div>
-
-
-        <div class="cards-grid three">
-
-          <article class="info-card">
-
-            <h3>
-              Family Time
-            </h3>
-
-            <p>
-              A welcoming place to sit down,
-              eat together and spend quality time.
-            </p>
-
-          </article>
-
-
-          <article class="info-card">
-
-            <h3>
-              Good Food
-            </h3>
-
-            <p>
-              Enjoy familiar meals and freshly
-              prepared selections in a relaxed setting.
-            </p>
-
-          </article>
-
-
-          <article class="info-card">
+      <article 
+            <article class="info-card">
 
             <h3>
               Great Moments
@@ -1047,4 +1525,4 @@
   </script>
 
 </body>
-            </html>
+</html>
